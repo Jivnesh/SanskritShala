@@ -1,0 +1,53 @@
+yenedaM vyasanaM prAptA Bavanto dyUtakAritam
+[0, 1, 'ye']
+[2, 2, 'na']
+[3, 6, 'idam']
+[0, 0, 'yA']
+[1, 2, 'inA']
+[0, 1, 'yA']
+[0, 2, 'yena']
+[8, 15, 'vyasanam']
+[17, 22, 'prAptAH']
+[17, 22, 'prAptA']
+[24, 30, 'BavantaH']
+[32, 34, 'dyu']
+[34, 36, 'uta']
+[37, 38, 'kA']
+[38, 40, 'ari']
+[41, 43, 'tam']
+[32, 34, 'dyU']
+[34, 37, 'Uta']
+[34, 36, 'Uta']
+[32, 37, 'dyUta']
+[34, 37, 'uta']
+[32, 36, 'dyUta']
+[37, 40, 'kAri']
+[32, 40, 'dyUta']
+[37, 43, 'kAritam']
+[34, 40, 'uta']
+[34, 40, 'Uta']
+
+------------------------------------------------------------------
+
+etac cAnyac ca kOravya prasaNgi kawukodayam
+[0, 3, 'etat']
+[5, 6, 'ca']
+[6, 10, 'anyat']
+[12, 13, 'ca']
+[15, 16, 'kO']
+[17, 21, 'ravya']
+[15, 21, 'kOravya']
+[23, 30, 'prasaNgi']
+[32, 36, 'kawukA']
+[37, 39, 'Uda']
+[40, 42, 'yam']
+[37, 42, 'udayam']
+[37, 39, 'uda']
+[32, 36, 'kawuka']
+[32, 35, 'kawu']
+[36, 36, 'kA']
+
+
+
+
+

@@ -1,0 +1,16 @@
+Uda,37,39,6
+anyat,6,10,2
+ca,5,6,2
+ca,12,13,3
+etat,0,3,1
+kA,36,37,6
+kO,15,16,4
+kOravya,15,21,4
+kawu,32,35,6
+kawukA,32,37,6
+kawuka,32,37,6
+prasaNgi,23,30,5
+ravya,17,21,4
+uda,37,39,6
+udayam,37,42,6
+yam,40,42,6

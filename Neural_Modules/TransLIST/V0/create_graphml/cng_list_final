@@ -1,0 +1,850 @@
+?	0
+abs.	-230
+act.	0
+adv.	0
+adv.	2
+aor. [1] ac. du. 1	-84
+aor. [1] ac. du. 2	-85
+aor. [1] ac. du. 3	-86
+aor. [1] ac. pl. 1	-87
+aor. [1] ac. pl. 2	-88
+aor. [1] ac. pl. 3	-89
+aor. [1] ac. sg. 1	-81
+aor. [1] ac. sg. 2	-82
+aor. [1] ac. sg. 3	-83
+aor. [1] md. pl. 3	-89
+aor. [1] md. sg. 1	-81
+aor. [1] md. sg. 2	-82
+aor. [1] md. sg. 3	-83
+aor. [1] ps. sg. 3	-83
+aor. [2] ac. du. 1	-94
+aor. [2] ac. du. 2	-95
+aor. [2] ac. du. 3	-96
+aor. [2] ac. pl. 1	-97
+aor. [2] ac. pl. 2	-98
+aor. [2] ac. pl. 3	-99
+aor. [2] ac. sg. 1	-91
+aor. [2] ac. sg. 2	-92
+aor. [2] ac. sg. 3	-93
+aor. [2] md. sg. 1	-91
+aor. [2] md. sg. 3	-93
+aor. [3] ac. pl. 3	-109
+aor. [3] ac. sg. 1	-101
+aor. [3] ac. sg. 2	-102
+aor. [3] ac. sg. 3	-103
+aor. [4] ac. du. 2	-115
+aor. [4] ac. du. 3	-116
+aor. [4] ac. pl. 1	-117
+aor. [4] ac. pl. 2	-118
+aor. [4] ac. pl. 3	-119
+aor. [4] ac. sg. 1	-111
+aor. [4] ac. sg. 2	-112
+aor. [4] ac. sg. 3	-113
+aor. [4] md. pl. 1	-117
+aor. [4] md. sg. 1	-111
+aor. [4] md. sg. 2	-112
+aor. [4] md. sg. 3	-113
+aor. [5] ac. pl. 2	-128
+aor. [5] ac. sg. 1	-121
+aor. [5] ac. sg. 2	-122
+aor. [5] ac. sg. 3	-123
+aor. [5] md. sg. 1	-121
+aor. [5] md. sg. 2	-122
+aor. [5] md. sg. 3	-123
+aor. [6] ac. sg. 3	-123
+aor. [7] ac. pl. 2	-138
+aor. [7] ac. sg. 1	-131
+aor. [7] ac. sg. 2	-132
+aor. [7] md. sg. 3	-133
+ben. ac. du. 1	-144
+ben. ac. pl. 1	-147
+ben. ac. sg. 1	-141
+ben. ac. sg. 2	-142
+ben. ac. sg. 3	-143
+ca. abs.	-230
+ca. fut. ac. pl. 2	-58
+ca. fut. ac. pl. 3	-59
+ca. fut. ac. sg. 1	-51
+ca. fut. ac. sg. 2	-52
+ca. fut. ac. sg. 3	-53
+ca. fut. md. sg. 1	-51
+ca. imp. ac. du. 1	-34
+ca. imp. ac. pl. 1	-37
+ca. imp. ac. pl. 2	-38
+ca. imp. ac. pl. 3	-39
+ca. imp. ac. sg. 2	-32
+ca. imp. ac. sg. 3	-33
+ca. impft. ac. du. 3	-46
+ca. impft. ac. pl. 2	-48
+ca. impft. ac. pl. 3	-49
+ca. impft. ac. sg. 1	-41
+ca. impft. ac. sg. 2	-42
+ca. impft. ac. sg. 3	-43
+ca. impft. md. du. 3	-46
+ca. impft. md. pl. 3	-49
+ca. impft. md. sg. 1	-41
+ca. impft. md. sg. 3	-43
+ca. impft. ps. pl. 3	-279
+ca. impft. ps. sg. 1	-271
+ca. impft. ps. sg. 2	-272
+ca. impft. ps. sg. 3	-273
+ca. imp. md. du. 2	-35
+ca. imp. md. du. 3	-36
+ca. imp. md. pl. 2	-38
+ca. imp. md. sg. 1	-31
+ca. imp. md. sg. 2	-32
+ca. imp. ps. sg. 1	-261
+ca. imp. ps. sg. 2	-262
+ca. imp. ps. sg. 3	-263
+ca. inf.	-220
+ca. opt. ac. du. 1	-24
+ca. opt. ac. du. 3	-26
+ca. opt. ac. pl. 2	-28
+ca. opt. ac. pl. 3	-29
+ca. opt. ac. sg. 1	-21
+ca. opt. ac. sg. 2	-22
+ca. opt. ac. sg. 3	-23
+ca. opt. md. du. 3	-26
+ca. opt. md. sg. 2	-22
+ca. opt. md. sg. 3	-23
+ca. opt. ps. sg. 3	-293
+ca. per. fut. ac. sg. 1	-71
+ca. per. fut. ac. sg. 3	-73
+ca. pfp. [1]	-210
+ca. pfp. [2]	-210
+ca. pfp. [3]	-210
+ca. pfu. ac.	-50
+ca. pp.	-190
+ca. ppa.	-200
+ca. ppr. ac.	-10
+ca. ppr. md.	-10
+ca. ppr. ps.	-240
+ca. pr. ac. du. 3	-16
+ca. pr. ac. pl. 1	-17
+ca. pr. ac. pl. 3	-19
+ca. pr. ac. sg. 1	-11
+ca. pr. ac. sg. 2	-12
+ca. pr. ac. sg. 3	-13
+ca. pr. md. pl. 3	-19
+ca. pr. md. sg. 1	-11
+ca. pr. md. sg. 2	-12
+ca. pr. md. sg. 3	-13
+ca. pr. ps. du. 3	-246
+ca. pr. ps. pl. 1	-247
+ca. pr. ps. pl. 3	-249
+ca. pr. ps. sg. 1	-241
+ca. pr. ps. sg. 2	-242
+ca. pr. ps. sg. 3	-243
+cond. ac. pl. 3	-69
+cond. ac. sg. 1	-61
+cond. ac. sg. 2	-62
+cond. ac. sg. 3	-63
+cond. md. sg. 1	-61
+conj.	0
+conj.	2
+des. imp. ac. du. 1	-34
+des. imp. ac. sg. 1	-31
+des. imp. ac. sg. 2	-32
+des. impft. md. sg. 1	-41
+des. imp. ps. sg. 3	-263
+des. opt. ac. sg. 1	-21
+des. per. fut. ac. sg. 3	-73
+des. pfp. [1]	-210
+des. pft. ac. pl. 2	-158
+des. pft. ac. pl. 3	-159
+des. pft. ac. sg. 1	-151
+des. pft. ac. sg. 3	-153
+des. pfu. ac.	-50
+des. pp.	-190
+des. ppr. ac.	-10
+des. pr. md. sg. 1	-11
+des. pr. md. sg. 3	-13
+* du. abl.	137
+* du. acc.	77
+* du. dat.	117
+* du. g.	157
+* du. i.	97
+* du. loc.	177
+* du. nom.	37
+f. du. abl.	135
+f. du. acc.	75
+f. du. dat.	115
+f. du. g.	155
+f. du. i.	95
+f. du. loc.	175
+f. du. nom.	35
+f. du. voc.	55
+f. pl. abl.	140
+f. pl. acc.	80
+f. pl. dat.	120
+f. pl. g.	160
+f. pl. i.	100
+f. pl. loc.	180
+f. pl. nom.	40
+f. pl. voc.	60
+f. sg. abl.	130
+f. sg. acc.	70
+f. sg. dat.	110
+f. sg. g.	150
+f. sg. i.	90
+f. sg. loc.	170
+f. sg. nom.	30
+f. sg. voc.	50
+fut. ac. du. 1	-54
+fut. ac. du. 2	-55
+fut. ac. du. 3	-56
+fut. ac. pl. 1	-57
+fut. ac. pl. 2	-58
+fut. ac. pl. 3	-59
+fut. ac. sg. 1	-51
+fut. ac. sg. 2	-52
+fut. ac. sg. 3	-53
+fut. md. du. 1	-54
+fut. md. du. 3	-56
+fut. md. pl. 1	-57
+fut. md. pl. 3	-59
+fut. md. sg. 1	-51
+fut. md. sg. 2	-52
+fut. md. sg. 3	-53
+iic.	3
+iiv.	3
+imp. [10] ac. du. 3	-36
+imp. [10] ac. pl. 1	-37
+imp. [10] ac. pl. 2	-38
+imp. [10] ac. pl. 3	-39
+imp. [10] ac. sg. 2	-32
+imp. [10] md. pl. 2	-38
+imp. [10] md. sg. 2	-32
+imp. [10] md. sg. 3	-33
+imp. [1] ac. du. 1	-34
+imp. [1] ac. du. 2	-35
+imp. [1] ac. du. 3	-36
+imp. [1] ac. pl. 1	-37
+imp. [1] ac. pl. 2	-38
+imp. [1] ac. pl. 3	-39
+imp. [1] ac. sg. 1	-31
+imp. [1] ac. sg. 2	-32
+imp. [1] ac. sg. 3	-33
+imp. [1] md. du. 3	-36
+imp. [1] md. pl. 2	-38
+imp. [1] md. pl. 3	-39
+imp. [1] md. sg. 1	-31
+imp. [1] md. sg. 2	-32
+imp. [1] md. sg. 3	-33
+imp. [2] ac. du. 1	-34
+imp. [2] ac. du. 2	-35
+imp. [2] ac. du. 3	-36
+imp. [2] ac. pl. 1	-37
+imp. [2] ac. pl. 2	-38
+imp. [2] ac. pl. 3	-39
+imp. [2] ac. sg. 1	-31
+imp. [2] ac. sg. 2	-32
+imp. [2] ac. sg. 3	-33
+imp. [2] md. du. 3	-36
+imp. [2] md. pl. 3	-39
+imp. [2] md. sg. 1	-31
+imp. [2] md. sg. 2	-32
+imp. [2] md. sg. 3	-33
+imp. [3] ac. du. 1	-34
+imp. [3] ac. du. 2	-35
+imp. [3] ac. du. 3	-36
+imp. [3] ac. pl. 1	-37
+imp. [3] ac. pl. 2	-38
+imp. [3] ac. pl. 3	-39
+imp. [3] ac. sg. 1	-31
+imp. [3] ac. sg. 2	-32
+imp. [3] ac. sg. 3	-33
+imp. [3] md. pl. 3	-39
+imp. [3] md. sg. 1	-31
+imp. [3] md. sg. 2	-32
+imp. [3] md. sg. 3	-33
+imp. [4] ac. du. 1	-34
+imp. [4] ac. du. 2	-35
+imp. [4] ac. du. 3	-36
+imp. [4] ac. pl. 1	-37
+imp. [4] ac. pl. 2	-38
+imp. [4] ac. pl. 3	-39
+imp. [4] ac. sg. 1	-31
+imp. [4] ac. sg. 2	-32
+imp. [4] ac. sg. 3	-33
+imp. [4] md. du. 3	-36
+imp. [4] md. pl. 2	-38
+imp. [4] md. pl. 3	-39
+imp. [4] md. sg. 1	-31
+imp. [4] md. sg. 2	-32
+imp. [4] md. sg. 3	-33
+imp. [5] ac. du. 2	-35
+imp. [5] ac. pl. 1	-37
+imp. [5] ac. pl. 2	-38
+imp. [5] ac. pl. 3	-39
+imp. [5] ac. sg. 2	-32
+imp. [5] ac. sg. 3	-33
+imp. [5] md. pl. 2	-38
+imp. [5] md. pl. 3	-39
+imp. [6] ac. du. 1	-34
+imp. [6] ac. du. 2	-35
+imp. [6] ac. du. 3	-36
+imp. [6] ac. pl. 1	-37
+imp. [6] ac. pl. 2	-38
+imp. [6] ac. pl. 3	-39
+imp. [6] ac. sg. 1	-31
+imp. [6] ac. sg. 2	-32
+imp. [6] ac. sg. 3	-33
+imp. [6] md. du. 3	-36
+imp. [6] md. pl. 2	-38
+imp. [6] md. sg. 1	-31
+imp. [6] md. sg. 2	-32
+imp. [6] md. sg. 3	-33
+imp. [7] ac. pl. 2	-38
+imp. [7] ac. sg. 2	-32
+imp. [7] ac. sg. 3	-33
+imp. [7] md. pl. 3	-39
+imp. [7] md. sg. 1	-31
+imp. [7] md. sg. 2	-32
+imp. [8] ac. du. 3	-36
+imp. [8] ac. pl. 1	-37
+imp. [8] ac. pl. 2	-38
+imp. [8] ac. pl. 3	-39
+imp. [8] ac. sg. 1	-31
+imp. [8] ac. sg. 2	-32
+imp. [8] ac. sg. 3	-33
+imp. [8] md. pl. 2	-38
+imp. [8] md. pl. 3	-39
+imp. [8] md. sg. 1	-31
+imp. [8] md. sg. 2	-32
+imp. [8] md. sg. 3	-33
+imp. [9] ac. du. 3	-36
+imp. [9] ac. pl. 1	-37
+imp. [9] ac. pl. 2	-38
+imp. [9] ac. pl. 3	-39
+imp. [9] ac. sg. 1	-31
+imp. [9] ac. sg. 2	-32
+imp. [9] ac. sg. 3	-33
+imp. [9] md. pl. 2	-38
+imp. [9] md. pl. 3	-39
+imp. [9] md. sg. 2	-32
+imp. [9] md. sg. 3	-33
+impft. [10] ac. pl. 2	-48
+impft. [10] ac. pl. 3	-49
+impft. [10] ac. sg. 1	-41
+impft. [10] ac. sg. 2	-42
+impft. [10] ac. sg. 3	-43
+impft. [10] md. du. 3	-46
+impft. [10] md. pl. 3	-49
+impft. [10] md. sg. 1	-41
+impft. [10] md. sg. 3	-43
+impft. [1] ac. du. 1	-44
+impft. [1] ac. du. 2	-45
+impft. [1] ac. du. 3	-46
+impft. [1] ac. pl. 1	-47
+impft. [1] ac. pl. 2	-48
+impft. [1] ac. pl. 3	-49
+impft. [1] ac. sg. 1	-41
+impft. [1] ac. sg. 2	-42
+impft. [1] ac. sg. 3	-43
+impft. [1] md. du. 1	-44
+impft. [1] md. du. 3	-46
+impft. [1] md. pl. 2	-48
+impft. [1] md. pl. 3	-49
+impft. [1] md. sg. 1	-41
+impft. [1] md. sg. 2	-42
+impft. [1] md. sg. 3	-43
+impft. [2] ac. du. 1	-44
+impft. [2] ac. du. 2	-45
+impft. [2] ac. du. 3	-46
+impft. [2] ac. pl. 1	-47
+impft. [2] ac. pl. 2	-48
+impft. [2] ac. pl. 3	-49
+impft. [2] ac. sg. 1	-41
+impft. [2] ac. sg. 2	-42
+impft. [2] ac. sg. 3	-43
+impft. [2] md. du. 3	-46
+impft. [2] md. pl. 3	-49
+impft. [2] md. sg. 1	-41
+impft. [2] md. sg. 2	-42
+impft. [2] md. sg. 3	-43
+impft. [3] ac. du. 2	-45
+impft. [3] ac. du. 3	-46
+impft. [3] ac. pl. 1	-47
+impft. [3] ac. pl. 2	-48
+impft. [3] ac. pl. 3	-49
+impft. [3] ac. sg. 1	-41
+impft. [3] ac. sg. 2	-42
+impft. [3] ac. sg. 3	-43
+impft. [3] md. sg. 1	-41
+impft. [3] md. sg. 3	-43
+impft. [4] ac. du. 1	-44
+impft. [4] ac. du. 3	-46
+impft. [4] ac. pl. 1	-47
+impft. [4] ac. pl. 2	-48
+impft. [4] ac. pl. 3	-49
+impft. [4] ac. sg. 1	-41
+impft. [4] ac. sg. 2	-42
+impft. [4] ac. sg. 3	-43
+impft. [4] md. du. 3	-46
+impft. [4] md. pl. 3	-49
+impft. [4] md. sg. 1	-41
+impft. [4] md. sg. 2	-42
+impft. [4] md. sg. 3	-43
+impft. [5] ac. du. 1	-44
+impft. [5] ac. du. 3	-46
+impft. [5] ac. pl. 2	-48
+impft. [5] ac. pl. 3	-49
+impft. [5] ac. sg. 1	-41
+impft. [5] ac. sg. 2	-42
+impft. [5] ac. sg. 3	-43
+impft. [6] ac. du. 3	-46
+impft. [6] ac. pl. 1	-47
+impft. [6] ac. pl. 2	-48
+impft. [6] ac. pl. 3	-49
+impft. [6] ac. sg. 1	-41
+impft. [6] ac. sg. 2	-42
+impft. [6] ac. sg. 3	-43
+impft. [6] md. du. 3	-46
+impft. [6] md. pl. 3	-49
+impft. [6] md. sg. 1	-41
+impft. [6] md. sg. 3	-43
+impft. [7] ac. pl. 2	-48
+impft. [7] ac. pl. 3	-49
+impft. [7] ac. sg. 2	-42
+impft. [7] ac. sg. 3	-43
+impft. [7] md. pl. 3	-49
+impft. [7] md. sg. 1	-41
+impft. [7] md. sg. 3	-43
+impft. [8] ac. du. 1	-44
+impft. [8] ac. du. 3	-46
+impft. [8] ac. pl. 1	-47
+impft. [8] ac. pl. 2	-48
+impft. [8] ac. pl. 3	-49
+impft. [8] ac. sg. 1	-41
+impft. [8] ac. sg. 2	-42
+impft. [8] ac. sg. 3	-43
+impft. [8] md. du. 1	-44
+impft. [8] md. pl. 3	-49
+impft. [8] md. sg. 1	-41
+impft. [8] md. sg. 3	-43
+impft. [9] ac. du. 3	-46
+impft. [9] ac. pl. 2	-48
+impft. [9] ac. pl. 3	-49
+impft. [9] ac. sg. 1	-41
+impft. [9] ac. sg. 2	-42
+impft. [9] ac. sg. 3	-43
+impft. [9] md. pl. 3	-49
+impft. [9] md. sg. 1	-41
+impft. [9] md. sg. 3	-43
+impft. ps. du. 3	-276
+impft. ps. pl. 3	-279
+impft. ps. sg. 1	-271
+impft. ps. sg. 2	-272
+impft. ps. sg. 3	-273
+impft. [vn.] ac. pl. 2	-48
+impft. [vn.] ac. sg. 1	-41
+impft. [vn.] ac. sg. 2	-42
+imp. ps. du. 3	-266
+imp. ps. pl. 2	-268
+imp. ps. pl. 3	-269
+imp. ps. sg. 1	-261
+imp. ps. sg. 2	-262
+imp. ps. sg. 3	-263
+imp. [vn.] ac. du. 1	-34
+imp. [vn.] ac. du. 3	-36
+imp. [vn.] ac. pl. 1	-37
+imp. [vn.] ac. pl. 2	-38
+imp. [vn.] ac. sg. 1	-31
+imp. [vn.] ac. sg. 2	-32
+ind.	0
+ind.	2
+inf.	-220
+inj. [1] ac. du. 1	-304
+inj. [1] ac. du. 2	-305
+inj. [1] ac. du. 3	-306
+inj. [1] ac. pl. 1	-307
+inj. [1] ac. pl. 2	-308
+inj. [1] ac. pl. 3	-309
+inj. [1] ac. sg. 1	-301
+inj. [1] ac. sg. 2	-302
+inj. [1] ac. sg. 3	-303
+inj. [1] md. pl. 2	-308
+inj. [1] md. pl. 3	-309
+inj. [1] md. sg. 1	-301
+inj. [1] md. sg. 2	-302
+inj. [1] md. sg. 3	-303
+inj. [1] ps. sg. 3	-303
+inj. [2] ac. pl. 3	-309
+inj. [2] ac. sg. 1	-301
+inj. [2] ac. sg. 2	-302
+inj. [2] ac. sg. 3	-303
+inj. [4] ac. pl. 2	-308
+inj. [4] ac. sg. 2	-302
+inj. [4] ac. sg. 3	-303
+inj. [4] md. sg. 1	-301
+inj. [4] md. sg. 2	-302
+inj. [4] md. sg. 3	-303
+int. impft. ac. sg. 2	-42
+int. ppr. ac.	-10
+int. pr. md. sg. 1	-11
+m. du. abl.	134
+m. du. acc.	74
+m. du. dat.	114
+m. du. g.	154
+m. du. i.	94
+m. du. loc.	174
+m. du. nom.	34
+m. du. voc.	54
+m. pl. abl.	139
+m. pl. acc.	79
+m. pl. dat.	119
+m. pl. g.	159
+m. pl. i.	99
+m. pl. loc.	179
+m. pl. nom.	39
+m. pl. voc.	59
+m. sg. abl.	129
+m. sg. acc.	69
+m. sg. dat.	109
+m. sg. g.	149
+m. sg. i.	89
+m. sg. loc.	169
+m. sg. nom.	29
+m. sg. voc.	49
+n. du. abl.	136
+n. du. acc.	76
+n. du. dat.	116
+n. du. g.	156
+n. du. i.	96
+n. du. loc.	176
+n. du. nom.	36
+n. du. voc.	56
+n. pl. abl.	141
+n. pl. acc.	81
+n. pl. dat.	121
+n. pl. g.	161
+n. pl. i.	101
+n. pl. loc.	181
+n. pl. nom.	41
+n. pl. voc.	61
+n. sg. abl.	131
+n. sg. acc.	71
+n. sg. dat.	111
+n. sg. g.	151
+n. sg. i.	91
+n. sg. loc.	171
+n. sg. nom.	31
+n. sg. voc.	51
+opt. [10] ac. pl. 2	-28
+opt. [10] ac. pl. 3	-29
+opt. [10] ac. sg. 1	-21
+opt. [10] ac. sg. 3	-23
+opt. [10] md. pl. 3	-29
+opt. [10] md. sg. 3	-23
+opt. [1] ac. du. 1	-24
+opt. [1] ac. du. 2	-25
+opt. [1] ac. du. 3	-26
+opt. [1] ac. pl. 1	-27
+opt. [1] ac. pl. 2	-28
+opt. [1] ac. pl. 3	-29
+opt. [1] ac. sg. 1	-21
+opt. [1] ac. sg. 2	-22
+opt. [1] ac. sg. 3	-23
+opt. [1] md. du. 3	-26
+opt. [1] md. pl. 1	-27
+opt. [1] md. pl. 3	-29
+opt. [1] md. sg. 1	-21
+opt. [1] md. sg. 2	-22
+opt. [1] md. sg. 3	-23
+opt. [2] ac. du. 1	-24
+opt. [2] ac. du. 2	-25
+opt. [2] ac. du. 3	-26
+opt. [2] ac. pl. 1	-27
+opt. [2] ac. pl. 2	-28
+opt. [2] ac. pl. 3	-29
+opt. [2] ac. sg. 1	-21
+opt. [2] ac. sg. 2	-22
+opt. [2] ac. sg. 3	-23
+opt. [2] md. pl. 3	-29
+opt. [2] md. sg. 1	-21
+opt. [2] md. sg. 2	-22
+opt. [2] md. sg. 3	-23
+opt. [3] ac. du. 1	-24
+opt. [3] ac. pl. 3	-29
+opt. [3] ac. sg. 1	-21
+opt. [3] ac. sg. 2	-22
+opt. [3] ac. sg. 3	-23
+opt. [3] md. sg. 3	-23
+opt. [4] ac. du. 1	-24
+opt. [4] ac. du. 3	-26
+opt. [4] ac. pl. 1	-27
+opt. [4] ac. pl. 2	-28
+opt. [4] ac. pl. 3	-29
+opt. [4] ac. sg. 1	-21
+opt. [4] ac. sg. 2	-22
+opt. [4] ac. sg. 3	-23
+opt. [4] md. du. 3	-26
+opt. [4] md. pl. 1	-27
+opt. [4] md. pl. 3	-29
+opt. [4] md. sg. 1	-21
+opt. [4] md. sg. 2	-22
+opt. [4] md. sg. 3	-23
+opt. [5] ac. du. 1	-24
+opt. [5] ac. pl. 1	-27
+opt. [5] ac. pl. 3	-29
+opt. [5] ac. sg. 1	-21
+opt. [5] ac. sg. 2	-22
+opt. [5] ac. sg. 3	-23
+opt. [5] md. pl. 1	-27
+opt. [5] md. sg. 3	-23
+opt. [6] ac. du. 1	-24
+opt. [6] ac. du. 3	-26
+opt. [6] ac. pl. 1	-27
+opt. [6] ac. pl. 2	-28
+opt. [6] ac. pl. 3	-29
+opt. [6] ac. sg. 1	-21
+opt. [6] ac. sg. 2	-22
+opt. [6] ac. sg. 3	-23
+opt. [6] md. pl. 3	-29
+opt. [6] md. sg. 2	-22
+opt. [6] md. sg. 3	-23
+opt. [7] ac. pl. 3	-29
+opt. [7] ac. sg. 1	-21
+opt. [7] ac. sg. 2	-22
+opt. [7] ac. sg. 3	-23
+opt. [7] md. pl. 3	-29
+opt. [7] md. sg. 2	-22
+opt. [7] md. sg. 3	-23
+opt. [8] ac. du. 2	-25
+opt. [8] ac. du. 3	-26
+opt. [8] ac. pl. 1	-27
+opt. [8] ac. pl. 3	-29
+opt. [8] ac. sg. 1	-21
+opt. [8] ac. sg. 2	-22
+opt. [8] ac. sg. 3	-23
+opt. [8] md. sg. 2	-22
+opt. [8] md. sg. 3	-23
+opt. [9] ac. pl. 2	-28
+opt. [9] ac. pl. 3	-29
+opt. [9] ac. sg. 1	-21
+opt. [9] ac. sg. 3	-23
+opt. [9] md. pl. 2	-28
+opt. [9] md. sg. 1	-21
+opt. [9] md. sg. 3	-23
+opt. ps. du. 3	-296
+opt. ps. pl. 1	-297
+opt. ps. pl. 3	-299
+opt. ps. sg. 2	-292
+opt. ps. sg. 3	-293
+opt. [vn.] ac. du. 1	-24
+part.	2
+per. fut. ac. du. 2	-75
+per. fut. ac. du. 3	-76
+per. fut. ac. pl. 2	-78
+per. fut. ac. pl. 3	-79
+per. fut. ac. sg. 1	-71
+per. fut. ac. sg. 2	-72
+per. fut. ac. sg. 3	-73
+pfp. [1]	-210
+pfp. [2]	-210
+pfp. [3]	-210
+pft. ac. du. 1	-154
+pft. ac. du. 2	-155
+pft. ac. du. 3	-156
+pft. ac. pl. 1	-157
+pft. ac. pl. 2	-158
+pft. ac. pl. 3	-159
+pft. ac. sg. 1	-151
+pft. ac. sg. 2	-152
+pft. ac. sg. 3	-153
+pft. md. du. 3	-156
+pft. md. pl. 3	-159
+pft. md. sg. 1	-151
+pft. md. sg. 2	-152
+pft. md. sg. 3	-153
+pfu. ac.	-50
+pfu. md.	-50
+* pl. abl.	142
+* pl. acc.	82
+* pl. dat.	122
+* pl. g.	162
+* pl. i.	102
+* pl. loc.	182
+* pl. nom.	42
+pp.	-190
+ppa.	-200
+ppf. ac.	-150
+ppf. md.	-150
+ppr. [10] ac.	-10
+ppr. [10] md.	-10
+ppr. [1] ac.	-10
+ppr. [1] md.	-10
+ppr. [2] ac.	-10
+ppr. [2] md.	-10
+ppr. [3] ac.	-10
+ppr. [3] md.	-10
+ppr. [4] ac.	-10
+ppr. [4] md.	-10
+ppr. [5] ac.	-10
+ppr. [5] md.	-10
+ppr. [6] ac.	-10
+ppr. [6] md.	-10
+ppr. [7] ac.	-10
+ppr. [7] md.	-10
+ppr. [8] ac.	-10
+ppr. [8] md.	-10
+ppr. [9] ac.	-10
+ppr. [9] md.	-10
+ppr. ps.	-240
+ppr. [vn.] ac.	-10
+pr. [10] ac. du. 1	-14
+pr. [10] ac. du. 3	-16
+pr. [10] ac. pl. 1	-17
+pr. [10] ac. pl. 2	-18
+pr. [10] ac. pl. 3	-19
+pr. [10] ac. sg. 1	-11
+pr. [10] ac. sg. 2	-12
+pr. [10] ac. sg. 3	-13
+pr. [10] md. pl. 1	-17
+pr. [10] md. pl. 3	-19
+pr. [10] md. sg. 1	-11
+pr. [10] md. sg. 2	-12
+pr. [10] md. sg. 3	-13
+pr. [1] ac. du. 1	-14
+pr. [1] ac. du. 2	-15
+pr. [1] ac. du. 3	-16
+pr. [1] ac. pl. 1	-17
+pr. [1] ac. pl. 2	-18
+pr. [1] ac. pl. 3	-19
+pr. [1] ac. sg. 1	-11
+pr. [1] ac. sg. 2	-12
+pr. [1] ac. sg. 3	-13
+pr. [1] md. du. 1	-14
+pr. [1] md. du. 3	-16
+pr. [1] md. pl. 1	-17
+pr. [1] md. pl. 3	-19
+pr. [1] md. sg. 1	-11
+pr. [1] md. sg. 2	-12
+pr. [1] md. sg. 3	-13
+pr. [2] ac. du. 1	-14
+pr. [2] ac. du. 2	-15
+pr. [2] ac. du. 3	-16
+pr. [2] ac. pl. 1	-17
+pr. [2] ac. pl. 2	-18
+pr. [2] ac. pl. 3	-19
+pr. [2] ac. sg. 1	-11
+pr. [2] ac. sg. 2	-12
+pr. [2] ac. sg. 3	-13
+pr. [2] md. du. 3	-16
+pr. [2] md. pl. 1	-17
+pr. [2] md. pl. 3	-19
+pr. [2] md. sg. 1	-11
+pr. [2] md. sg. 2	-12
+pr. [2] md. sg. 3	-13
+pr. [3] ac. du. 3	-16
+pr. [3] ac. pl. 1	-17
+pr. [3] ac. pl. 3	-19
+pr. [3] ac. sg. 1	-11
+pr. [3] ac. sg. 2	-12
+pr. [3] ac. sg. 3	-13
+pr. [3] md. du. 3	-16
+pr. [3] md. pl. 3	-19
+pr. [3] md. sg. 1	-11
+pr. [3] md. sg. 2	-12
+pr. [3] md. sg. 3	-13
+pr. [4] ac. du. 1	-14
+pr. [4] ac. du. 3	-16
+pr. [4] ac. pl. 1	-17
+pr. [4] ac. pl. 2	-18
+pr. [4] ac. pl. 3	-19
+pr. [4] ac. sg. 1	-11
+pr. [4] ac. sg. 2	-12
+pr. [4] ac. sg. 3	-13
+pr. [4] md. du. 1	-14
+pr. [4] md. du. 3	-16
+pr. [4] md. pl. 1	-17
+pr. [4] md. pl. 3	-19
+pr. [4] md. sg. 1	-11
+pr. [4] md. sg. 2	-12
+pr. [4] md. sg. 3	-13
+pr. [5] ac. du. 3	-16
+pr. [5] ac. pl. 1	-17
+pr. [5] ac. pl. 3	-19
+pr. [5] ac. sg. 1	-11
+pr. [5] ac. sg. 2	-12
+pr. [5] ac. sg. 3	-13
+pr. [5] md. du. 3	-16
+pr. [5] md. pl. 3	-19
+pr. [5] md. sg. 2	-12
+pr. [5] md. sg. 3	-13
+pr. [6] ac. du. 1	-14
+pr. [6] ac. du. 2	-15
+pr. [6] ac. du. 3	-16
+pr. [6] ac. pl. 1	-17
+pr. [6] ac. pl. 2	-18
+pr. [6] ac. pl. 3	-19
+pr. [6] ac. sg. 1	-11
+pr. [6] ac. sg. 2	-12
+pr. [6] ac. sg. 3	-13
+pr. [6] md. du. 1	-14
+pr. [6] md. du. 3	-16
+pr. [6] md. pl. 1	-17
+pr. [6] md. pl. 3	-19
+pr. [6] md. sg. 1	-11
+pr. [6] md. sg. 2	-12
+pr. [6] md. sg. 3	-13
+pr. [7] ac. du. 3	-16
+pr. [7] ac. pl. 3	-19
+pr. [7] ac. sg. 2	-12
+pr. [7] ac. sg. 3	-13
+pr. [7] md. du. 3	-16
+pr. [7] md. pl. 1	-17
+pr. [7] md. pl. 3	-19
+pr. [7] md. sg. 1	-11
+pr. [7] md. sg. 2	-12
+pr. [7] md. sg. 3	-13
+pr. [8] ac. du. 1	-14
+pr. [8] ac. du. 3	-16
+pr. [8] ac. pl. 1	-17
+pr. [8] ac. pl. 2	-18
+pr. [8] ac. pl. 3	-19
+pr. [8] ac. sg. 1	-11
+pr. [8] ac. sg. 2	-12
+pr. [8] ac. sg. 3	-13
+pr. [8] md. du. 3	-16
+pr. [8] md. pl. 1	-17
+pr. [8] md. pl. 3	-19
+pr. [8] md. sg. 1	-11
+pr. [8] md. sg. 2	-12
+pr. [8] md. sg. 3	-13
+pr. [9] ac. du. 1	-14
+pr. [9] ac. du. 3	-16
+pr. [9] ac. pl. 1	-17
+pr. [9] ac. pl. 2	-18
+pr. [9] ac. pl. 3	-19
+pr. [9] ac. sg. 1	-11
+pr. [9] ac. sg. 2	-12
+pr. [9] ac. sg. 3	-13
+pr. [9] md. pl. 1	-17
+pr. [9] md. pl. 3	-19
+pr. [9] md. sg. 1	-11
+pr. [9] md. sg. 2	-12
+pr. [9] md. sg. 3	-13
+prep.	0
+prep.	2
+pr. ps. du. 1	-244
+pr. ps. du. 3	-246
+pr. ps. pl. 1	-247
+pr. ps. pl. 3	-249
+pr. ps. sg. 1	-241
+pr. ps. sg. 2	-242
+pr. ps. sg. 3	-243
+pr. [vn.] ac. du. 3	-16
+pr. [vn.] ac. sg. 2	-12
+pr. [vn.] ac. sg. 3	-13
+pr. [vn.] md. sg. 2	-12
+* sg. abl.	132
+* sg. acc.	72
+* sg. dat.	112
+* sg. g.	152
+* sg. i.	92
+* sg. loc.	172
+* sg. nom.	32
+* sg. voc.	52
+tasil	1
