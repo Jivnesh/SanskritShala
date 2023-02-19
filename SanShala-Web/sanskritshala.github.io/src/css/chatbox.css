@@ -1,0 +1,74 @@
+.chatbot{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background-color: rgb(145, 0, 255, 0.56);
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .chatbot:hover{
+    box-shadow: 0px 0px 2px 2px rgb(255, 255, 255);
+    transform: scale(1.1);
+  }
+  .chatbox{
+    width: 340px;
+    height: 60%;
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    transition: height 1s, bottom 1s;
+  }
+  .titlechatbox{
+    opacity: .7;
+    cursor: pointer;
+    background-color: rgb(5, 8, 0);
+    width:100%;
+    height:10%;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    transition: opacity 1s,background-color 1s;
+    display: flex;
+    justify-content: space-between;
+  }
+  .titlechatbox:hover{
+    opacity: 1;
+  }
+  .chatboxchatarea{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 8, 0, 0.733);
+    transition: background-color 1s,height .4s ;
+  }
+  .titlechatbox:hover .chatbox{
+    background-color: #282c34;
+  }
+  .chatarea{
+    background-color: whitesmoke;
+    height: 85%;
+    margin-left: 4px;
+    margin-right: 4px;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: auto;
+  }
+  .chatresponses{
+    display: inline-block;
+    border-style: solid;
+    margin:4px;
+    border-radius: 12px;
+    border-width: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: rgba(111, 116, 117, 0.818);
+  }
+  .chatresponses:hover{
+    background-color: rgba(141, 141, 141, 0.349);
+    cursor: pointer;
+  }

@@ -1,0 +1,129 @@
+/* .dp{
+    height: 100vh;
+    background-color: aliceblue;
+}
+.dpdisplay{
+    width: 40%;
+    background-color: white;
+    margin: auto;
+    top: 10%;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    position: relative;
+}
+.display{
+    width: 40%;
+    height:40%;
+    background-color: white;
+    margin: auto;
+    top: 10%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    padding-bottom: 12px;
+    position: relative;
+}
+.dpinputbox{
+    width: 60%;
+    height: 20%;
+    background-color: white;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: auto;
+    border-radius: 12px;
+}
+.dpinput{
+    border: none;
+    outline: none;
+    display: flex;
+    max-width: 100%;
+    flex:1;
+    resize: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: large;
+    font-family: sans-serif;
+
+
+}
+.dpwords{
+    padding: 4px 10px;
+    border-style: solid;
+    border-width: 2px;
+    margin:4px;
+    border-radius: 4px;
+    transition: all 1s;
+    overflow-x: auto;
+}
+.dpwords:hover{
+    cursor: pointer;
+}
+.searchicon{
+    color: white;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.searchoptions{
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    padding: 8px;
+    color: white;
+}
+.searchoptions:hover{
+    cursor: pointer;
+    background-color: hotpink;
+    
+}
+::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+}
+.submit{
+    background-color: lightgray;
+    border: none;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: blue;
+    font-weight: bold;
+}
+.upload{
+    background-color: lightgray;
+    border: none;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 10%;
+    border-left-style: solid;
+    border-left-color: white;
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+.fileupload{
+    width: .1px;
+}
+.searchwindow{
+    color:'black';
+    background-color:blue;
+    height:188px;
+    width:188px;
+    position:absolute;
+    right:0px;
+    top:0px;
+    z-index: 11;
+    transition: all 1s;
+    border: solid;
+}
+
+button:hover{
+    cursor: pointer;
+} */

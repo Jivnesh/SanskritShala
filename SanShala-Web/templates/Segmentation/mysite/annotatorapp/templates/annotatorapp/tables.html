@@ -1,0 +1,56 @@
+<!-- to display all the stored tables available upon clicking datatables option in the navigation bar-->
+{% load table_tags %}
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Word Data</title>
+        <link rel="stylesheet" href="//cdn.bootcss.com/twitter-bootstrap/3.0.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'annotatorapp/main.css' %}">
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="//cdn.bootcss.com/twitter-bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+            <!-- navbar -->
+            <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container">
+              <div class="container-fluid">
+                  <div class="navbar-header">
+                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+				   </button>
+                      <a class="navbar-brand" href="/" style="font-size:25px;color:#fff;font-weight:700;"><!--<i class="fas fa-book-open"></i>-->  SanskritShala</a>
+                  </div>
+
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+							<li><a href="/" style="font-size:20px;font-weight:500;">Input</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="font-size:20px;font-weight:500;">Datatables</a>              <!--dropdown for all possible inputs for table display-->
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/wordtable/">wordtable</a></li>
+									<li class="divider"></li>
+									<li><a href="/linetable/">linetable</a></li>  
+									<li class="divider"></li>
+									<li><a href="/wordsinsentencetable/">wordsinsentencetable</a></li> 
+                                </ul>
+                            </li>
+                            <li><a href="/sentences/0" style="font-size:20px;font-weight:500;">Sentences</a></li>
+                            
+                        </ul>
+                    </div>
+              </div>
+            </div>
+			</nav>
+     <div class="container">
+          <br />
+          {% render_table tabledata %}
+      </div>
+    </body>
+</html>

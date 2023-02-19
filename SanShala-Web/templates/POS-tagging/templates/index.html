@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="../static/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../static/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="../static/plugins/elegant_font/css/style.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../static/css/styles.css">
+    <!-- loader css -->
+    <link rel="stylesheet" href="../static/css/loader.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="../static/js/gotodep.js"></script>
+    <title>Morphological Tagging</title>
+</head>
+
+<body>
+    <!-- ******Header****** -->
+    <header id="header" class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a class="scrollto" href="#hero">
+                    <!-- <span class="logo-icon-wrapper"><img class="logo-icon" src="../../images/Krishna-logo.jpg"
+                            alt="icon"></span> -->
+                    <span class="highlight">SanskritShala</span>
+                </a>
+            </h1>
+            <!--//logo-->
+            <nav class="main-nav navbar-expand-md float-right navbar-inverse" role="navigation">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--//nav-toggle-->
+
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item"><a class="active nav-link scrollto" href="http://cnerg.iitkgp.ac.in/sanskritshala/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="/sanskritshala/resources">Resources</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#features">Contacts</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#team">Publications</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#pricing">Thesis</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#contact">E-readers</a></li>
+                    </ul>
+                    <!--//nav-->
+                </div>
+                <!--//navabr-collapse-->
+            </nav>
+            <!--//main-nav-->
+        </div>
+        <!--//container-->
+    </header>
+    <!--//header-->
+    <div id="black-line">
+    </div>
+
+    <div class="page-header theme-bg-dark py-5 text-center position-relative">
+        <div class="theme-bg-shapes-right"></div>
+        <div class="theme-bg-shapes-left"></div>
+        <div class="container">
+            <h1 class="page-heading single-col-max mx-auto">Morphological Tagging</h1>
+            <br>
+            <div class="page-intro single-col-max mx-auto">Select the Transliteration scheme and Enter the text below to
+                see prediction</div>
+            <br>
+            <div class="main-search-box pt-3 d-block mx-auto">
+                <form class="search-form w-100" action="predict/" method="post">
+                    <label for="select-box-input-convention" id="label-scheme">Input scheme:</label>
+                    <select name="Input-scheme" id="select-box-input-convention">
+                        <option class="option-scheme" value="Velthuis">Velthuis</option>
+                        <option class="option-scheme" value="WX">WX</option>
+                        <option class="option-scheme" value="KH">KH</option>
+                        <option class="option-scheme" value="SLP1">SLP1</option>
+                        <option class="option-scheme" value="Devanagari">Devanagari</option>
+                        <option class="option-scheme" value="IAST">IAST</option>
+                    </select>
+                    <label for="select-box-output-convention" id="label-scheme2">Output scheme:</label>
+                    <select name="Output-scheme" id="select-box-output-convention">
+                        <option class="option-scheme" value="WX">WX</option>
+                        <option class="option-scheme" value="IAST">IAST</option>
+                        <!-- <option class ="option-scheme" value="KH">KH</option> -->
+                        <option class="option-scheme" value="SLP1">SLP1</option>
+                        <option class="option-scheme" value="Devanagari" selected>Devanagari</option>
+                        <option class="option-scheme" value="Velthuis">Velthuis</option>
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="सीता लक्ष्मणः च तान् तान्नमतः" name="search"
+                        class="form-control search-input" id='input-search'>
+                    <br>
+                    <span style="color: white;">*Please give segmented sentence only</span>
+                    <br>
+                    <span style="color: white;">*System may take more than 5 seconds.</span>
+                    <br><br>
+                    <button type="submit" id="submit-button" class="btn-enter" value="Search">
+                        Enter
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-result">
+        <br>
+        {% if 'empty' not in index.keys() %}
+        <center id="compound-heading">Below is the Morphological tagging of the words that you entered</center>
+        <br>
+        {% endif %}
+        <center>
+            <div style="display: inline-block;">
+                {% for ind, details in index.items()%}
+                {% if ind != 'empty'%}
+                <div style="display: flex; margin : 30px;" class="position-data">
+
+                    <!-- adding main word -->
+                    <div style="min-width: 150px;">
+                        <div class="words" id="worddiv-{{ind}}"
+                            style="display: inline-block;border: 1px solid black;background-color: rgb(38, 213, 152);;border-radius: 4px; margin : 3px;padding :1px"
+                            onmouseover="myFunction1('worddiv-{{ind}}');" onmouseout="myFunction2('worddiv-{{ind}}');">
+                            <span class="span-word" id="word-{{ind}}">{{details[0]}}</span>
+                        </div>
+                    </div>
+
+                    <!-- adding visible and hidden tags -->
+                    <div style="display: inline-block; margin-left: 100px; min-width: 650px;">
+                        {% for tags in details[4]%}
+                        <div class="div-tags word-{{ind}}-tag"
+                            style=" background-color: rgb(180, 232, 252) ;display : none;text-align: center; padding :1px"
+                            id="word-{{ind}}-{{tags}}" onmouseover="myFunction1('word-{{ind}}-{{tags}}');"
+                            onmouseout="myFunction2('word-{{ind}}-{{tags}}');"
+                            onclick="myFunction3('word-{{ind}}-{{tags}}','word-{{ind}}-tag')"
+                            ondblclick="myFunction5('word-{{ind}}-{{tags}}')">{{tags}}</div>
+                        {% endfor %}
+
+                        {% for (num,tags) in details[3]%}
+                        {% if tags != details[1] %}
+                        <div class="div-tags word-{{ind}}-tag"
+                            style=" background-color: rgb(180, 232, 252); text-align: center; padding :1px"
+                            id="word-{{ind}}-tag-{{num}}" onmouseover="myFunction1('word-{{ind}}-tag-{{num}}');"
+                            onmouseout="myFunction2('word-{{ind}}-tag-{{num}}');"
+                            onclick="myFunction3('word-{{ind}}-tag-{{num}}','word-{{ind}}-tag')"
+                            ondblclick="myFunction5('word-{{ind}}-tag-{{num}}')">{{tags}} </div>
+                        {% elif tags == details[1] %}
+                        <div class="div-tags word-{{ind}}-tag"
+                            style=" background-color: rgb(113,207,19); text-align: center; padding :0px; border-width: 3px; font-weight: 700;"
+                            id="word-{{ind}}-tag-{{num}}"
+                            onclick="myFunction3('word-{{ind}}-tag-{{num}}','word-{{ind}}-tag')"
+                            ondblclick="myFunction5('word-{{ind}}-tag-{{num}}')">{{tags}} </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% if details[5] ==1 %}
+                        <div class="div-tags word-{{ind}}-tag"
+                            style=" background-color: rgb(238, 129, 66); text-align: center; padding :1px"
+                            id="word-{{ind}}-tag-unmatched" onmouseover="myFunction1('word-{{ind}}-tag-unmatched');"
+                            onmouseout="myFunction2('word-{{ind}}-tag-unmatched');"
+                            onclick="myFunction3('word-{{ind}}-tag-unmatched','word-{{ind}}-tag')"
+                            ondblclick="myFunction5('word-{{ind}}-tag-unmatched')">{{details[1]}} </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- adding list of tags -->
+                    <div class="add-tags" style="margin-top: 4px;">
+                        <select name="tags" id="add-tags-{{ind}}" onclick="checkAlert(event)"
+                            class="select-of-adding-tags">
+                            <option value="choose">Choose
+                            </option>
+                            {% for tags in details[4]%}
+                            <option value="{{tags}}" id="{{ind}}-{{tags}}">{{tags}}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                </div>
+
+                {% else %}
+                <div class="no-word">
+                    <br>
+                    <span class="span-word-no-compound" id="word-{{ind}}">{{details}}</span>
+                </div>
+
+                {% endif %}
+
+                {% endfor %}
+            </div>
+        </center>
+        <br><br>
+    </div>
+
+    <center>
+        <button type="download" class="submit-download-button" onclick="myFunction6('div-tags')">Download</button>
+    </center>
+    <center>
+        <!-- <form action="/gotodependency" method="post"> -->
+        <button type="download" name="gotodep" id="get-dependency" class="get-dependency-button"
+            onclick="gotodependency()">Get Dependency</button>
+        <!-- </form> -->
+    </center>
+    <br><br>
+    <center>
+    <div class="circular" id="circular-loader" style="display: none;">
+        <div class="inner"></div>
+        <div class="outer"></div>
+        <div class="numb">
+            0%
+        </div>
+        <div class="circle">
+            <div class="dot">
+                <span></span>
+            </div>
+            <div class="bar left">
+                <div class="progress"></div>
+            </div>
+            <div class="bar right">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div></center>
+    <script>
+        const numb = document.querySelector(".numb");
+        let counter = 0;
+        setInterval(() => {
+            if (counter == 100) {
+                clearInterval();
+            } else {
+                counter += 1;
+                numb.textContent = counter + "%";
+            }
+        }, 160);
+    </script>
+    <script>
+
+        function myFunction1(id) {
+            document.getElementById(id).style.borderWidth = '2px';
+            document.getElementById(id).style.padding = "0px";
+        }
+        function myFunction2(id) {
+            document.getElementById(id).style.borderWidth = '1px';
+            document.getElementById(id).style.padding = "1px";
+        }
+        function myFunction3(id_name, classname) {
+            var tags = document.getElementsByClassName(classname);
+            for (var i = 0; i < tags.length; i++) {
+                var tem = "";
+                tags.item(i).style.borderWidth = '1px';
+                tags.item(i).style.padding = '1px';
+                tags.item(i).style.fontWeight = '500';
+                tags.item(i).style.backgroundColor = 'rgb(' + '180' + ',' + '232' + ',' + '252' + ')';
+            }
+            document.getElementById(id_name).style.borderWidth = '3px';
+            document.getElementById(id_name).style.padding = '0px';
+            document.getElementById(id_name).style.backgroundColor = 'rgb(' + '113' + ',' + '207' + ',' + '19' + ')';
+            document.getElementById(id_name).style.fontWeight = '700';
+            document.getElementById(id_name).onmouseover = false;
+            document.getElementById(id_name).onmouseout = false;
+        }
+        function myFunction4(id_name) {
+            document.getElementById(id_name).style.display = "inline-block";
+        }
+        function myFunction5(id_name) {
+            document.getElementById(id_name).style.display = "none";
+        }
+        function myFunction6(class_name) {
+            tags = document.getElementsByClassName(class_name);
+            words = document.getElementsByClassName('words');
+            var j = 0;
+            var i;
+            var rows = [];
+
+            const color = 'rgb(' + '113' + ',' + ' 207' + ',' + ' 19' + ')';
+            var t = 0;
+            for (i = 0; i < tags.length; i++) {
+                const temp = [];
+                if (tags.item(i).style.backgroundColor == color && tags.item(i).style.display != "none") {
+
+                    temp.push(words.item(j).textContent.slice(8).trim());
+                    temp.push(tags.item(i).textContent);
+                    j = j + 1;
+                    rows.push(temp);
+                }
+                else if (tags.item(i).style.backgroundColor == color && tags.item(i).style.display == "none") {
+                    t = j;
+                    break;
+                }
+                if (j == words.length) break;
+            }
+            if (j != words.length) {
+                alert("Please select tags for all words. You have not selected tags for" + words.item(t).textContent.slice(8));
+            }
+            else {
+                let csvContent = "data:text/csv;charset=utf-8,";
+
+                rows.forEach(function (rowArray) {
+                    let row = rowArray.join(",");
+                    csvContent += row + "\n";
+                });
+                var encodedUri = encodeURI(csvContent);
+                window.open(encodedUri);
+            }
+
+        }
+        function checkAlert(evt) {
+            var txt = evt.target.value;
+            var str1 = "word-";
+            var first = str1.concat(evt.target.id.slice(9));
+            var id_name = first.concat('-', txt)
+            document.getElementById(id_name).style.display = "inline-block";
+        }
+        function myFunction(id_name) {
+            var tags = document.getElementsByClassName("prob-graph");
+            for (var i = 0; i < tags.length; i++) {
+                tags.item(i).style.display = "none";
+            }
+            document.getElementById(id_name).style.display = "inline-block";
+        }
+    </script>
+</body>
+
+</html>

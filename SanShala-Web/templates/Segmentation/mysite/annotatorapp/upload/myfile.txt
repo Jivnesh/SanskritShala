@@ -1,0 +1,11 @@
+1	rAmasya	g. sg. m.	_	_	_
+2	BAryA	pfp. [1]	_	_	_
+3	sItA	nom. sg. f.	_	_	_
+4	tasya	g. sg. m.	_	_	_
+5	anujaH	nom. sg. m.	_	_	_
+6	lakzmaRaH	g. sg. n.	_	_	_
+7	ca	conj.	_	_	_
+8	rAmeRa	i. sg. n.	_	_	_
+9	saha	adv.	_	_	_
+10	vanam	nom. sg. n.	_	_	_
+11	gacCataH	tasil	_	_	_

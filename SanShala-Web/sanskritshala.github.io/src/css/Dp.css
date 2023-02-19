@@ -1,0 +1,119 @@
+.dp{
+    padding-top: 24px;
+    height: 100vh;
+    /* background-color: khaki; */
+    /* overflow-y: hidden; */
+}
+.padding{
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+}
+.main-container{
+    width: 100%;
+}
+.input{
+    padding: 12px;
+    outline: none;
+    border-style: solid;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-left: 4px;
+
+    margin-bottom: 12px;
+}
+.file-input-button{
+    padding: 12px;
+    margin-bottom: 12px;
+    border: none;
+    outline: none;
+    margin-left: 4px;
+    margin-right: 4px;
+    background-color: orange;
+    border-radius: 4px;
+    cursor: pointer;
+    /* color: white; */
+    font-size: 14px;
+}
+.submit-button{
+    color: white;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px;
+    border: none;
+    outline: none;
+    margin-left: 4px;
+    margin-right: 4px;
+    background-color: orange;
+    border-radius: 4px;
+}
+.tag-container{
+    overflow: auto;
+    display: flex;
+}
+.tag-values{
+    padding: 12px 24px;
+    margin: 12px;
+    font-size: 14px;
+    border-style: solid;
+    border-radius: 4px;
+    /* color: white; */
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.input-container{
+    margin-bottom: 12px;
+}
+.input-values{
+    padding: 12px 24px;
+    margin: 12px;
+    font-size: 14px;
+    border-style: solid;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+.text-align-left{
+    text-align: left;
+    padding-left: 12px;
+}
+.display-container{
+    /* display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    margin: auto;
+    justify-content: space-between;
+    height: 440px;
+    background-color: pink; */
+    height: 60%;
+    margin: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 12px;
+    position: relative;
+    
+
+}
+.navigation{
+    padding-left: 12px;
+    padding-right: 12px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+@media (max-width:992px) {
+    .main-container{
+        /* height: 400px; */
+    }
+}

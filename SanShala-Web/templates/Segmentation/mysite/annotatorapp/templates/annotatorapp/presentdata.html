@@ -1,0 +1,1154 @@
+{% extends "annotatorapp/base.html" %}
+{%block title%}Presentdata{%endblock%}
+{%block content%}
+{% load poll_extras %}
+
+<p id = 'show_lemma' class='label other'></p>
+
+<div class="panel-group">
+
+	<!--applying recommendation options-->
+	<p><strong>RECOMMENDATION : </strong></p>
+	<ul class="pager">
+		<strong>Segmentation </strong> <!--segmentation only , performs highlighting of the first row-->
+		<li>
+			<label class="switch">
+				<input type="checkbox" id="recommend1">
+				<span class="slider round"></span>
+			</label>
+		</li>
+		<strong>Segmentation + FlowChart </strong><!--performs highlighting of first row as well as eliminates the noisy conflict segments-->
+		<li>
+		<label class="switch">
+			<input type="checkbox" id="recommend2">
+			<span class="slider round"></span>
+		</label>
+		</li>
+
+		<!--undo the last action-->
+		<li><button class='btn btn-default' id='undo' title='Undo Option'>Undo</button></li>
+		<li class="next"><a href="{% url 'annotatorapp:reset_allselection' sent_id=sentid %}" title="Refresh Option">Reset</a></li>
+
+	</ul>
+
+	<div class="panel panel-info">
+
+		<div class="panel-heading" >
+
+		<h3 class="panel-title" >
+			<a data-toggle="collapse" href="#collapse{{sentid}}">
+			<table class='styling'>
+				{% for word in line_header.split%}
+					<th>
+						{%for c in word%}
+							<td id='heading'>{{c}}</td>
+						{%endfor%}
+					</th>
+				{% endfor %}
+			</table>
+			</a>
+		</h3>
+		</div>
+
+		<!--collapsible to list out words, lemma, morph, auxi and preverb for the entire user input-->
+		<div id="collapse{{sentid}}" class="panel-collapse collapse">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+					<td>word</td>
+					<td>lemma </td>
+					<td>morph </td>
+					<td>auxi</td>
+					<td>preverb</td>
+					<td></td>
+					</tr>
+				</thead>
+
+				<tbody>
+				{% for wd in wordsdata %}
+					{% if not wd.isEliminated %}
+						<tr>
+							<td>{{wd.word}}</td>
+							<td>{{wd.lemma}} </td>
+							<td>{{wd.morph}} </td>
+							<td>{{wd.aux_info}}</td>
+							<td>{{wd.pre_verb}}</td>
+							<td>{% if wd.isSelected %}
+								<a class="btn btn-success btn-xs" title="Select option and eliminate others">Selected</a>
+							{% endif %}</td>
+						</tr>
+					{%endif%}
+				{%endfor%}
+				</tbody>
+			</table>
+		</div>
+		<div class="panel-body">
+			<table class="table-responsive styling" id='word-table'>
+				<tbody>
+					{%for l in levelrange%}
+						<tr>
+							{%for p in positionrange%}
+								{%with lp1=levelpos|getdicvalue:l lp2=levelwordpos|getdicvalue:l x=l|getstring:p%}
+
+									{%if p|checkpos:lp1 == 'ok'%}
+										<td></td>
+									{%elif p|checkpos:lp2 == 'ok'%}
+
+										{% with wd1=wordsdata|getword:x y=wordsdata|getallwordids:x%}
+											<!--this will generate all possible segments from the input sentence-->
+											<td colspan={{wd1.colspan}}>
+												<div class='edit_div' id = '{{x}}-edit_div'>
+													<input type='button' title="{{wordsdata|nbinputs:y}}" data-nb-status='lemma' data-nb-ids='{{y}}' data-nb-inputs="{{y|nbios:1}}" data-nb-lemmas="{{wordsdata|nbinputs:y}}" id = '{{x}}' datastatus = 'off' class="draggable_operator ui-draggable ui-draggable-handle {{wd1.color_class}} words" value='{{wd1.word}}'>
+
+													{%if wd1.color_class != "grey_back"%}
+														<a href="#edit-modal" data-toggle="modal" data-target="#edit-modal" id="{{x}}-edit" class="edit" data-id='{{x}}'>Edit</a>
+													{%endif%}
+												</div>
+											</td>
+
+										{%endwith%}
+									{%else%}
+									{%endif%}
+								{%endwith%}
+							{%endfor%}
+						</tr>
+					{%endfor%}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<button id='see-segmentation' align='left' class='btn btn-success' style="margin: 40px 60% 0 46.5%;" title='See final Segmentation' onclick="update_segmentation()"> See Final Segmentation </button>
+	<br><br>
+	<div id="final-segmentation" align='center'></div>
+	<!--flowchart will be generated upon clicking the finish button-->
+	<!-- <button id='finish' align='centre' class='btn btn-success' style="margin: 40px 50% 0 50%;" title='Finish Segmentation'> Finish </button> -->
+	<button id='download-segmentation' align='centre' class='btn btn-success' style="margin: 40px 50% 0 46.5%;" title='Download Segmentation' onclick="download_segmentation()"> Download Segmentation</button>
+</div>
+
+<div id="show-morph">
+	<button onclick="myfunc()"  align='centre' style="height: 34px; border: 1px solid transparent; border-radius: 4px; width: 180px;margin: 40px 50% 0 46.5%; color: #fff; background-color: #449d44; border-color: #398439;">
+		Show Morph Annotation
+	</button>
+</div>
+
+<div id="pos-tagger">
+
+</div>
+
+<div class="modal fade" id="edit-modal" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title" align='center'>Edit Word Properties</h4>
+				</div>
+			<div class="modal-body">
+				<form autocomplete="off">
+					 <div class="opt" style="width:300px">
+					Word :<input type="text" id="word_name"> </div><br><br>
+					Form :
+					Noun <input type="radio" name="word_form" value="noun">
+					Verb <input type="radio" name="word_form" value="verb">
+					Indeclinables <input type="radio" name="word_form" value="ind">
+					Compound Component<input type="radio" name="word_form" value="comp">
+					<br><br>
+					<div class="autocomplete" style="width:300px">Morph :
+						<input id="morph" name="word_morph" type="text">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal" id="word_done">Done</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- <div class="container" id="whole">
+
+	<h1>Flowchart</h1>
+	<!- -display of flowchart and various options given herewith- ->
+	<button class="btn btn-info delete_selected_button"> Delete Selected Operator/link </button>
+	<button class="btn btn-info get_data"> Get data </button>
+	<table>
+		<tbody id="tbody"></tbody>
+	</table>
+	<br></br>
+	<button class="btn btn-info save_data"> Save Data </button>
+	<button class="btn btn-info show1"> Show Words </button>
+	<button class="btn btn-info show2"> Show Links </button>
+	<button class="btn btn-info "id="hide"> Hide </button>
+	<br></br>
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!- - Modal content- ->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title" align='center'>Edit Link Properties</h4>
+				</div>
+				<div class="modal-body">
+					<p id='linkrel' align="center" style="font-size:3vw"></p>
+					<div id="link_properties" style="display: block;">
+						<label for="link_name">Link Name: </label><input type="text" id="link_name" class='inputfield'><button class="save_linkname btn btn-success" id="savelinkname">Save Link Name</button>
+					</div>
+					<div id="link_properties1" style="display: block;">
+						<label for="link_name1">Link Name: </label><input type="text" id="link_name1"><button class="save_linkname1 btn btn-success" id="savelinkname1">Save Link Name</button>
+					</div>
+					<button class="delete_selected_button btn btn-danger" id ='ds1'>Delete selected operator/link</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+		</div>
+
+	</div>
+</div> -->
+
+
+<div class="flowchart-example-container" id="example_1"></div>
+
+<div class="flowchart-example-container" id="example_5" style="display: none;"></div>
+<div id="mymodal" onclick="mymod()"><img id = "modal_image" src="/static/annotatorapp/loader.gif" alt="Loading..."></div>
+<!-- <div class="tenor-gif-embed" data-postid="22743155" data-share-method="host" data-aspect-ratio="0.990625" data-width="100%"><a href="https://tenor.com/view/hug-gif-22743155">Hug Sticker</a>from <a href="https://tenor.com/search/hug-stickers">Hug Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script> -->
+{%endblock%}
+
+{%block javascript%}
+
+<script type="text/javascript">
+//function is made available after the document is loaded to initialize values to variables
+$(document).ready(function()
+{
+	var nop = 0;
+	var cur_op_id=0;
+	var if_done = 0;
+	var line = 20;
+	var if_finish = 0;
+	var init_time = 0;
+	var end_time = 0;
+	var btnClicks = [];
+	var clickSequence = [];//captures the ids which leads to the sequences that have been followed by user
+	var savedSentence = [];
+	var auto_ar = [];
+	var properties = {};
+	var data ={};
+	var date = new Date();
+	var id = 0;
+	var btn;
+	var btn_high;
+	var c = true;
+
+	var cur_url= window.location.href.split('&')[0];
+	var bid=cur_url[cur_url.length-1];
+	$('#exid').attr("href","/sentences/"+bid);
+
+	init_time = date.getTime();
+	$('#whole').hide();
+	$('#recommend1').prop('checked',false);
+	$('#recommend2').prop('checked',false);
+
+	btn_high = $('.select_high')
+	//for applying shadows to buttons in the given table consisting of possible segments
+	function btnHigh(){
+		if(c)
+			btn_high.toggleClass('high');
+		else
+			btn_high.toggleClass('high');
+		c = !c;
+	}
+	//recommendation using segmentation only which highlights the first row
+	$('#recommend1').change(function(){
+		var xsent = JSON.stringify('{{line}}');
+		// console.log("start")
+		// console.log(xsent);
+		// console.log("end")
+		$.ajax({
+			type:'POST',
+			// url:'ajax/get_xsent_sol/',
+			url:'ajax/extract_segmentation/',
+			data:{
+				'line': xsent
+			},
+			success: function(data)
+			{
+				// console.log("sentence is : ")
+				// console.log(xsent)
+				// console.log("end")
+				var lem;
+				var mor;
+				data = JSON.parse(data);
+				// console.log("start")
+				// console.log(data);
+				// console.log("end")
+				// dl = data.lemmas.replace(/'|"/g,'').slice(1,-1).split(", ");
+				dl = data.lemmas
+        		// dm = data.morph_cng.replace(/'|"/g,'').slice(1,-1).split(", ");
+				// console.log("start");
+			 	console.log(dl);
+			 	// console.log(dm);
+
+				btn = $('input[type="button"]');
+// 				// console.log(btn[3]);
+			 	for(var i=0;i<dl.length;i++){
+			 		// t = '{ '+dm[i]+' }'+'@['+dl[i]+']';
+			 		// console.log(t);
+//			 		console.log('########');
+			 		for(var j=0;j<btn.length;j++){
+			 			str = btn[j].value;
+			 			// console.log();
+						if(dl[i]==str){
+							btn[j].className += ' select_high';
+							console.log('matched');
+							btn_high = $('.select_high')
+						}
+			 			// for(var k=0;k<arr.length;k++){
+			 			// 	ar = arr[k].split('-')[0] + ']';
+			 			// 	// console.log(arr[k]);
+			 				
+			 			// }
+			 		}
+
+				}
+
+				// console.log("end")
+// 			 	btn = $('input[type="button"]');
+// 				// console.log(btn[3]);
+// 			 	for(var i=0;i<dl.length;i++){
+// 			 		t = '{ '+dm[i]+' }'+'@['+dl[i]+']';
+// 			 		console.log(t);
+// //			 		console.log('########');
+// 			 		for(var j=0;j<btn.length;j++){
+// 			 			arr = btn[j].title.split('\n');
+// 			 			// console.log();
+// 			 			for(var k=0;k<arr.length;k++){
+// 			 				ar = arr[k].split('-')[0] + ']';
+// 			 				// console.log(arr[k]);
+// 			 				if(arr[k]==t || ar==t){
+// 			 					btn[j].className += ' select_high';
+// 			 					console.log('matched');
+// 			 					btn_high = $('.select_high')
+// 			 				}
+// 			 			}
+// 			 		}
+
+// 				}
+			}
+		})
+
+		nop = 0;
+		line = 20;
+		var c1 = this.checked;
+		if(c1)
+			id = setInterval(btnHigh,800);
+		else{
+			clearInterval(id);
+			btn_high.removeClass('high');
+		}
+		var conf = JSON.parse('{{conflictslp}}'.replace(/(&quot\;)/g,"\""));
+		for(var key in conf){
+			if(conf[key].length == 0){
+				$('#'+key).click();
+			}
+		}
+	});
+
+	//recommendation using segmentation and display of the single morphs in the list of all segements
+	$('#recommend2').change(function(){
+		nop = 0;
+		line = 20;
+		var c2 = this.checked;
+		if(c2)
+			id = setInterval(btnHigh,800);
+		else{
+			clearInterval(id);
+			btn_high.removeClass('high');
+		}
+		var conf = JSON.parse('{{conflictslp}}'.replace(/(&quot\;)/g,"\""));
+		for(var key in conf){
+			if(conf[key].length == 0){
+				$('#'+key).click();
+			}
+		}
+	});
+	//function for autocompleting entries whenever there is a gray box encountered
+	//and manual entry of words need to occur
+	function autocomplete(inp, arr) {
+		//inputs are the text field element and an array of possible autocompleted values:
+		var currentFocus;
+		//execute a function when someone writes in the text field:
+		inp.addEventListener("input", function(e) {
+			var a, b, i, val = this.value;
+			closeAllLists(); //close any already open lists of autocompleted values
+			if (!val) { return false;}
+			currentFocus = -1;
+			a = document.createElement("DIV");
+			a.setAttribute("id", this.id + "autocomplete-list");
+			a.setAttribute("class", "autocomplete-items");
+			this.parentNode.appendChild(a); //append the DIV element as a child of the autocomplete container:
+			for (i = 0; i < arr.length; i++) {
+				if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) { //check if the item starts with the same letters as the text field value:
+				b = document.createElement("DIV");
+				b.innerHTML = "<b>" + arr[i].substr(0, val.length) + "</b>";
+				b.innerHTML += arr[i].substr(val.length);
+				b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+				b.addEventListener("click", function(e) {
+					inp.value = this.getElementsByTagName("input")[0].value;
+					closeAllLists();
+				});
+				a.appendChild(b);
+				}
+			}
+		});
+		//execute a function presses a key on the keyboard:
+		inp.addEventListener("keydown", function(e) {
+			var x = document.getElementById(this.id + "autocomplete-list");
+			if (x)
+				{x = x.getElementsByTagName("div")};
+			if (e.keyCode == 40){  //If the arrow DOWN key is pressed, increase the currentFocus variable:
+				currentFocus++;
+				addActive(x); //and make the current item more visible:
+			}
+			else if (e.keyCode == 38) { //up
+			currentFocus--;
+			addActive(x);
+			}
+			else if (e.keyCode == 13) { //enter key
+			e.preventDefault();
+			if (currentFocus > -1)
+				if (x)
+					x[currentFocus].click();
+			}
+		});
+		function addActive(x) { //function to classify an item as "active"
+			if (!x) return false;
+			removeActive(x);
+			if (currentFocus >= x.length)
+				currentFocus = 0;
+			if (currentFocus < 0)
+				currentFocus = (x.length - 1);
+			x[currentFocus].classList.add("autocomplete-active");
+		}
+		function removeActive(x) { //function to remove the "active" class from all autocomplete items:
+			for (var i = 0; i < x.length; i++)
+				x[i].classList.remove("autocomplete-active");
+		}
+		function closeAllLists(elmnt) { //close all autocomplete lists in the document, except the one passed as an argument:
+			var x = document.getElementsByClassName("autocomplete-items");
+			for (var i = 0; i < x.length; i++) {
+				if (elmnt != x[i] && elmnt != inp)
+					x[i].parentNode.removeChild(x[i]);
+			}
+		}
+	}
+	function location(){
+		var ctl = document.getElementById('word_name');
+		var startPos = ctl.selectionStart;
+		return startPos;
+	}
+
+	//function for displaying autocomplete possibilities involving different chaarcters that cannot be input from keyboard
+	function disp_opt(inp) {
+		var options ={ 65:"aā",72:"hḥ", 73:"iī", 76:"lḷḹ", 77:"mṃ", 78:"nṅñṇ", 82:"rṛṝ", 83:"sṣś", 84:"tṭ", 85:"uū" };
+		var cur_opt = "";
+
+		//execute a function presses a key on the keyboard:
+		inp.addEventListener("keydown", function(e) {
+			var x = document.getElementById(this.id + "opt-list");
+			var val = document.getElementById(inp.id).value;
+			if (x)
+				{x = x.getElementsByTagName("div")};
+			if( options[e.keyCode] ){
+				cur_opt = options[e.keyCode];
+				var a, b, i;
+				closeAllLists();
+				currentFocus = -1;
+				cur_loc = location();
+				a = document.createElement("DIV");
+				a.setAttribute("id", this.id + "opt-list");
+				a.setAttribute("class", "opt-items");
+				inp.parentNode.appendChild(a);
+				for( i=0; i<cur_opt.length; i++) {
+					b = document.createElement("DIV");
+					var ch=cur_opt[i];
+					b.innerHTML = ch;
+					( function() {
+						var c=ch;
+						b.addEventListener("click", function(e) {
+							inp.value = val.slice(0,cur_loc)+c+val.slice(cur_loc);
+							closeAllLists();
+						});
+					})();
+					a.appendChild(b);
+				}
+
+			}
+			if (e.keyCode == 40){  //If the arrow DOWN key is pressed, increase the currentFocus variable:
+				currentFocus++;
+				addActive(x); //and make the current item more visible:
+			}
+			else if (e.keyCode == 38) { //up
+			currentFocus--;
+			addActive(x);
+			}
+			else if (e.keyCode == 13) { //enter key
+			e.preventDefault();
+			if (currentFocus > -1)
+				if (x)
+					x[currentFocus].click();
+			}
+		});
+		function addActive(x) { //function to classify an item as "active"
+			if (!x) return false;
+			removeActive(x);
+			if (currentFocus >= x.length)
+				currentFocus = 0;
+			if (currentFocus < 0)
+				currentFocus = (x.length - 1);
+			x[currentFocus].classList.add("opt-active");
+		}
+		function removeActive(x) { //function to remove the "active" class from all autocomplete items:
+			for (var i = 0; i < x.length; i++)
+				x[i].classList.remove("opt-active");
+		}
+		function closeAllLists(elmnt) { //close all autocomplete lists in the document, except the one passed as an argument:
+			var x = document.getElementsByClassName("opt-items");
+			for (var i = 0; i < x.length; i++) {
+				if (elmnt != x[i] && elmnt != inp)
+					x[i].parentNode.removeChild(x[i]);
+			}
+		}
+	}
+	disp_opt(word_name);
+	//for editing each of those words segemented in the table
+	$(document).on('click','.edit',function(){
+		var id=$(this).data('id');
+		var word=$("#"+id).val();
+		cur_op_id = id;
+		$(".modal-body #word_name").val(word);
+		$('#'+id).siblings('p').remove(".tick");
+ 	});
+	$(document).on("click","#word_done",function() {
+		word_name= $("#word_name").val();
+		word_morph= $("#morph").val();
+		$("#morph").val('');
+		document.querySelector('input[name="word_form"]:checked').checked = false;
+			properties= {
+				title: word_name,
+				inputs: {
+					ins: {
+						label: word_morph,
+						multiple: false
+					}
+				},
+			outputs: {
+				outs: {
+					label: '.',
+					multiple: false
+				}
+			}
+		};
+		$("#"+cur_op_id).attr('title',word_morph);
+		if_done = 1;
+		$('#'+cur_op_id).click();
+	});
+
+	//once finish has been selected, the words selected along with data including timestamp, clickedsequence goes to the database
+	$('#finish').click( function(){
+		$('#whole').show();
+		$('#finish').hide();
+		var date = new Date();
+		end_time = date.getTime();
+		if_finish=1;
+		$.ajax({
+			type:"POST",
+			url: "ajax/save_data_to_db/",
+			data:{
+				'it' : JSON.stringify(init_time),
+				'et' : JSON.stringify(end_time),
+				'cs' : JSON.stringify(clickSequence),
+				'ss' : JSON.stringify(savedSentence)
+			},
+			success: function(data)
+			{
+//				alert('Added to DB');
+			}
+		})
+	});
+	$('#example_1').hide();
+	var $flowchart = $('#example_5');
+	var $container = $flowchart.parent();
+	var $linkProperties = $('#link_properties');
+	var $linkProperties1 = $('#link_properties1');
+	$linkProperties.hide();
+	$linkProperties1.hide();
+	var $linkname = $('#link_name');
+	var $linkname1 = $('#link_name1');
+
+	$flowchart.flowchart({
+		//initialization of properties
+		data: data,
+		multipleLinksOnOutput: true,
+		onLinkSelect: function(linkId) {
+			$linkProperties.show();
+			var data = $flowchart.flowchart('getData');
+			var rname = 'link';
+			if (typeof data.links[linkId].relationame != 'undefined') {
+				rname = data.links[linkId].relationame;
+			}
+			$linkname.val(rname);
+			$("#myModal").modal();
+			$('#linkrel').text(rname);
+			return true;
+		},
+		onLinkUnselect: function() {
+			$linkProperties.hide();
+			return true;
+		}
+	});
+
+		$('#example_1').flowchart({
+		data: {},
+		multipleLinksOnOutput: true,
+			onLinkSelect: function(linkId) {
+			$linkProperties1.show();
+			var data = $('#example_1').flowchart('getData');
+			var rname = 'link';
+			if (typeof data.links[linkId].relationame != 'undefined')
+				rname = data.links[linkId].relationame;
+			$linkname1.val(rname);
+			$("#myModal").modal();
+			$('#linkrel').text(rname);
+			return true;
+		},
+		onLinkUnselect: function() {
+			$linkProperties1.hide();
+			return true;
+		}
+	});
+
+	//hiding the data corresponding to the id example_1
+	$('#hide').click(function() {
+		$('#example_1').hide()
+	});
+	$('#savelinkname1').click(function() {
+		var selectedLinkId = $('#example_1').flowchart('getSelectedLinkId');
+		if (selectedLinkId != null) {
+			var data = $('#example_1').flowchart('getData');
+			data.links[selectedLinkId].relationame = $linkname1.val();
+			$('#example_1').flowchart('setData', data);
+			$('#linkrel').text($linkname1.val()).fadeIn('slow');
+		}
+	});
+	$('#savelinkname').click(function() {
+		var selectedLinkId = $flowchart.flowchart('getSelectedLinkId');
+		if (selectedLinkId != null) {
+			var data = $flowchart.flowchart('getData');
+			data.links[selectedLinkId].relationame = $linkname.val();
+			$flowchart.flowchart('setData', data);
+			$('#linkrel').text($linkname.val()).fadeIn('slow');
+		}
+	});
+	//to show the data that was hidden initially
+	$flowchart.siblings('.show1').click(function() {
+		$('#example_1').show();
+		var data = JSON.parse('{{dragdata}}'.replace(/(&quot\;)/g,"\""));
+		var i = 10 ;
+		var top = 50;
+		for(var key in data) {
+			data[key].left = i;
+			data[key].top = top;
+			i += 250;
+			$('#example_1').flowchart('createOperator', key, data[key]);
+			if ( i > (document.getElementById("example_1").clientWidth - 250) ) {
+				i = 10;
+				top += 150;
+			}
+		};
+	});
+
+	$flowchart.siblings('.show2').click(function() {
+		var links = JSON.parse('{{links}}'.replace(/(&quot\;)/g,"\""));
+		var data1 = $('#example_1').flowchart('getData');
+		data1['links'] = links;
+		$('#example_1').flowchart('setData',data1);
+	});
+
+	//handles operator creation
+	var operatorI = 0;
+	$flowchart.siblings('.create_operator').click(function() {
+		var operatorId = 'created_operator_' + operatorI;
+		var operatorData = {
+			top: 60,
+			left: 500,
+			properties: {
+				title: 'Operator ' + (operatorI + 3),
+				inputs: {
+					input_1: {
+						label: 'Input 1',
+					}
+				},
+				outputs: {
+					output_1: {
+						label: 'Output 1',
+					}
+				}
+			}
+		};
+		operatorI++;
+		$flowchart.flowchart('createOperator', operatorId, operatorData);
+	});
+	//delete selected id
+	$flowchart.siblings('.delete_selected_button').click(function() {
+		$flowchart.flowchart('deleteSelected');
+		$('#example_1').flowchart('deleteSelected');
+	});
+	//deletion display through the help of modals
+	$('#ds1').click(function() {
+		$flowchart.flowchart('deleteSelected');
+		$('#example_1').flowchart('deleteSelected');
+		$('#linkrel').text('...');
+		$('#myModal').fadeOut('slow').modal('hide');
+	});
+	$flowchart.siblings('.get_data').click(function() {
+			function download(filename, text) {
+			var element = document.createElement('a');
+			element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+			element.setAttribute('download', filename);
+			element.style.display = 'none';
+			document.body.appendChild(element);
+			element.click();
+			document.body.removeChild(element);
+		}
+
+		// Start file download.
+		var sentid='{{sentid}}'
+		$.ajax({
+			type:"POST",
+			url: "ajax/get_data/",
+			data:{
+				'sentid' : sentid
+			},
+			success: function( data )
+			{
+				var tbody = document.getElementById('tbody');
+				var data1 =  JSON.parse(data.replace(/(&quot\;)/g,"\""));
+				var text = '';
+				for ( var key in data1) {
+					var tr = "<tr>";
+					var rel = '_';
+					if(data1[key][5]!='')
+						rel = data1[key][5]
+					text = text + data1[key][0]+'\t'+ data1[key][2]+'\t'+ data1[key][4]+'\t'+data1[key][3].replace(/ /g,'')+'\t'+'_'+'\t'+'_'+'\t'+ data1[key][6]+'\t'+ rel+'\t'+'_'+'\t'+'_'
+					text = text + '\n'
+					tr += "<td>" +data1[key][0]+ "</td>" +
+					"<td>" +data1[key][1]+ "</td>" +
+					"<td>" +data1[key][2]+ "</td>" +
+					"<td>" +data1[key][3]+ "</td>" +
+					"<td>" +data1[key][4]+ "</td>" +
+					"<td>" +data1[key][5]+ "</td>" +
+					"<td>" + data1[key][6] + "</td></tr>";
+					/* We add the table row to the table body */
+					tbody.innerHTML += tr;
+				}
+				download(sentid+".txt",text)
+			}
+		})
+	});
+	//function to save sentence that has been shown using links among the operators in the flowchart
+	$flowchart.siblings('.save_data').click(function() {
+		var dragdata = $flowchart.flowchart('getData');
+		var links = dragdata.links ;
+		var link ={};
+		var wordidparent={};
+		var c=[];
+		var l =[];
+		var f=0;
+		var t=0;
+		var wordidchilds={};
+		var wordidrel={}
+		var sentid='{{sentid}}'
+		var rname =''
+		for(var key in links){
+			if (typeof links[key].relationame != 'undefined')
+				rname = links[key].relationame;
+			t=links[key].toConnector.substr(3);
+			f=links[key].fromConnector.substr(4);
+			wordidrel[t]=rname;
+			//saving the data shown along with the relationname
+			if(c.includes(f))
+				wordidchilds[f] = wordidchilds[f]+'-'+t;
+			else
+				wordidchilds[f] = '-'+t;c.push(f)
+			wordidparent[t]=f;
+		};
+		$.ajax({
+			type:"POST",
+			url: "ajax/save_data/",
+			data:{
+				'wp' : JSON.stringify(wordidparent),
+				'wc' : JSON.stringify(wordidchilds),
+				'wr' : JSON.stringify(wordidrel),
+				'sentid' : sentid
+			},
+			success: function( data )
+			{
+				alert('Flowchart Saved Successfully');
+			}
+		})
+	});
+
+	// CSRF code
+	function getCookie(name) {
+		var cookieValue = null;
+		var i = 0;
+		if (document.cookie && document.cookie !== '') {
+			var cookies = document.cookie.split(';');
+			for (i; i < cookies.length; i++) {
+				var cookie = jQuery.trim(cookies[i]);
+				// Does this cookie string begin with the name we want?
+				if (cookie.substring(0, name.length + 1) === (name + '=')) {
+					cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+					break;
+				}
+			}
+		}
+		return cookieValue;
+	}
+
+	var csrftoken = getCookie('csrftoken');
+	function csrfSafeMethod(method) {
+		// these HTTP methods do not require CSRF protection
+		return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+	}
+
+	$.ajaxSetup({
+		crossDomain: false, // obviates need for sameOrigin test
+		beforeSend: function(xhr, settings) {
+			if (!csrfSafeMethod(settings.type))
+				xhr.setRequestHeader("X-CSRFToken", csrftoken);
+		}
+	});
+
+	var $draggableOperators = $('.draggable_operator');
+	var dwor = [];
+	function getOperatorData($element) {
+		var nbInputs = parseInt($element.data('nb-inputs'));
+		var nbOutputs = nbInputs;
+		var str = $element.data('nb-lemmas').toString();
+		var status = $element.data('nb-status');
+		var ids = $element.data('nb-ids').toString().split('-');
+		var showlabels =str.split('\n');
+		var dic = {};
+		var data =[];
+		var wordtext =  $element.text();
+		if (status == 'lemma') {
+			var i = 0;
+			for (i = 0; i < nbInputs; i++) {
+				var data1 = {
+					properties: {
+						title:ids[i] +' : '+ $element.text(),
+						inputs: {
+							ins: {
+								label: showlabels[i],
+								multiple: false
+							}
+						},
+						outputs: {
+							outs: {
+								label: '(:i)',
+								multiple: false
+							}
+						}
+					}
+				};
+				dic['lemma_'+ids[i]] = data1
+				data.push(data1)
+			}
+		}
+		else {
+			var data1 = {
+			properties: {
+				title: ids[0]+' : ' +$element.text(),
+				inputs: {
+					ins: {
+						label: '(:i)',
+						multiple: false
+					}
+				},
+				outputs: {
+					outs: {
+						label: '(:i)',
+						multiple: true
+					}
+				}
+			}
+			};
+			dic['word_'+ids[0]] = data1
+			data.push(data1)
+		}
+		return dic;
+	}
+
+	var operatorId = 0;
+	// to perform edit morph operation
+	$('.edit_div').hover(
+		function(){
+			var eid= ($(this)[0].id).replace('-edit_div','');
+			if ( $('#'+eid+'-tick').length == 0 && (eid.match(/-/g)||[]).length!=2 )
+				$('#'+eid+'-edit').css("display","block");
+		},
+		function(){
+			var eid= ($(this)[0].id).replace('-edit_div','');
+			if ( $('#'+eid+'-tick').length == 0 && (eid.match(/-/g)||[]).length!=2 )
+				$('#'+eid+'-edit').css("display","none");
+	});
+
+	//to orient the draggable operators and handle further operations
+	$('.edit_div').on("mouseenter", ".draggable_operator", function(ev) {
+		$('#show_lemma').text($(ev.target).attr('title').replace(/@/g,' ')).fadeIn("slow");
+	});
+	$('.edit_div').on("mouseleave", ".draggable_operator", function() {
+		$('#show_lemma').text(' ');
+	});
+	//to give the similar functionality to the gray word segment not chosen
+	$(document).on('click','.draggable_operator',function(){
+		var flag = 0;
+		if ( if_finish == 0)
+		{
+			flag = 1;
+			$('#whole').show();
+		}
+		var pid = $(this).prop('id');
+		var cids = JSON.parse('{{conflictslp}}'.replace(/(&quot\;)/g,"\""));
+		var colorlp = JSON.parse('{{colorlp}}'.replace(/(&quot\;)/g,"\""));
+		btnClicks.push(pid);
+		if(colorlp[pid] =='grey_back'){
+			// function to handle gray button clicks
+			$("#whole").hide();
+			if(clickSequence[(clickSequence.length)-1]!= (pid+'G'))
+					clickSequence.push(pid+'G');
+			var eid= ($(this)[0].id).concat('-edit');
+			$('#'+eid).remove();
+			$(this).attr('type','text');
+			$(this).attr('readonly','readonly');
+			$(this).css('width',($(this).val().length+1)*13 + 'px');
+		}
+		else if((pid.match(/-/g)||[]).length==2){
+			(clickSequence[(clickSequence.length)-1] != (pid+'S')) ?  clickSequence.push(pid+'S') :  clickSequence.push(pid+'U');
+			var eid= ($(this)[0].id).concat('-edit');
+			var flag = 0;
+			if ( if_finish == 0) {
+				flag = 1;
+				$('#whole').show();
+			}
+			if(!savedSentence.includes(pid))
+				savedSentence.push(pid);
+			if($(this).attr('datastatus') == 'off') {
+				var data = {
+					left: 0,
+					top : 0,
+					properties: {
+						title: 'new-child',
+						inputs: {},
+						outputs: {}
+					}
+				};
+				if (( nop > (div_width/200) )  && (nop%2 == 0)) {
+					nop = 0;
+					line += 400;
+				}
+				data.left = ( nop*150 ) % div_width + 20;
+				if ( nop%2 ==0 )
+					data.top = 20+line;
+				else
+					data.top = 200+line;
+				var i = 0;
+				if ( if_finish==0 ) {
+					$('#whole').hide();
+					flag = 0;
+				}
+
+				if( if_done == 1) {
+					data.properties = properties;
+					if_done = 0;
+				}
+
+				$flowchart.flowchart('createOperator', pid, data);
+				nop += 1;
+				var e= $("<p class='tick'>✓</p>");
+				$(this).parent().append(e);
+				e.attr('id',pid+'-tick');
+				$('#'+eid).css("display","none");
+				$(this).attr("datastatus", "on");
+
+			}
+			else if($(this).attr('datastatus') == 'on') {
+				$(this).siblings('p').remove(".tick");
+				$flowchart.flowchart('deleteOperator', pid);
+				if (if_finish == 0)
+					$('#whole').hide();
+				$('#'+eid).css("display","inline");
+				$(this).attr("datastatus", "off");
+				('#'+pid+'-edit_div').attr('class','edit_div');
+				nop -= 1;
+
+			}
+		}
+		else if(colorlp[pid]!='grey_back'){
+			(clickSequence[(clickSequence.length)-1] != (pid+'S')) ?  clickSequence.push(pid+'S') :  clickSequence.push(pid+'U');
+			var flag = 0;
+			if ( if_finish == 0) {
+				flag = 1;
+				$('#whole').show();
+			}
+			if(!savedSentence.includes(pid))
+				savedSentence.push(pid)
+			if($(this).attr('datastatus') == 'off') {
+				var $element = $(this);
+				var nbInputs = parseInt($element.data('nb-inputs'));
+				var nbOutputs = nbInputs;
+				var str = $element.data('nb-lemmas').toString();
+				var status = $element.data('nb-status');
+				var ids = $element.data('nb-ids').toString().split('-');
+				var showlabels =str.split('\n');
+				var wordtext =  $element.text();
+				var div_width = document.getElementById("example_5").clientWidth;
+				var data = {
+					left: 0,
+					top : 0,
+					properties: {
+						title: $element.text()+ '<br>'+showlabels[0].split('@')[1],
+						inputs: {},
+						outputs: {}
+					}
+				};
+				if (( nop > (div_width/200) )  && (nop%2 == 0)) {
+					nop = 0;
+					line += 400;
+				}
+				data.left = ( nop*150 ) % div_width + 20;
+				if ( nop%2 ==0 )
+					data.top = 20+line;
+				else
+					data.top = 200+line;
+				var i = 0;
+				var c = document.getElementById('recommend2').checked;
+				if ( c ) {
+						data.properties.inputs['in-'+ids[i]] = {
+						label: showlabels[i].split('@')[0].slice(1,-1)
+					};
+					data.properties.outputs['out-'+ids[i]] = {
+						label: '.'
+					};
+				}
+				else {
+					for (i = 0; i < nbInputs; i++) {
+						data.properties.inputs['in-'+ids[i]] = {
+							label: showlabels[i].split('@')[0].slice(1,-1)
+						};
+					}
+					for (i = 0; i < nbInputs; i++) {
+						data.properties.outputs['out-'+ids[i]] = {
+							label: '.'
+						};
+					}
+					if ( if_finish==0 ) {
+						$('#whole').hide();
+						flag = 0;
+					}
+				}
+				if( if_done == 1) {
+					data.properties = properties;
+					if_done = 0;
+				}
+
+				$flowchart.flowchart('createOperator', pid, data);
+				nop += 1;
+				var e = $(" <p class='tick'>✓</p>");
+				$(this).parent().append(e);
+				e.attr('id',pid+'-tick');
+				$('#'+pid+'-edit').css('display','none');
+				for (i = 0; i < cids[pid].length; i++) {
+					$('#'+cids[pid][i]).fadeOut();
+					$('#'+cids[pid][i]).parent().attr('class','w_back');
+				}
+				$(this).attr("datastatus", "on");
+			}
+			else if($(this).attr('datastatus') == 'on') {
+				$(this).siblings('p').remove(".tick");
+				$flowchart.flowchart('deleteOperator', pid);
+				if (if_finish == 0)
+					$('#whole').hide();
+				for (var i = 0; i < cids[pid].length; i++) {
+					$('#'+cids[pid][i]).fadeIn('slow');
+					$('#'+cids[pid][i]).parent().attr('class',colorlp[cids[pid][i]]);
+				}
+				$(this).attr("datastatus", "off");
+				nop -= 1;
+			}
+		}
+	});
+
+	var newWords = [];
+	var id_count = 0;
+	$draggableOperators.select(function(){
+		// function for handling gray words
+		var sid = $(this).prop('id');
+		var i = $("<input type='button' class='draggable_operator words' datastatus = 'off' title=' ' readonly>");
+		id_count ++;
+		i.prop('id',sid+'-'+id_count);
+		i.val($(this).selection());
+		var e = $('<a href="#edit-modal" data-toggle="modal" data-target="#edit-modal" class="edit" style="display:inline">Edit </a>');
+		e.prop('id',i.prop('id')+'-edit');
+		e.attr('data-id',i.prop('id'));
+		newWords.push(i.val()); // acquiring new values
+		$(this).before(i);
+		i.after(e);
+		i.css('width',(i.val().length+1)*13+'px'); //adding css properties
+		$(this).val($(this).val().replace(i.val(),''));
+		$(this).css('width',($(this).val().length+1)*13+'px');
+		var v = $(this).val();
+		if(v===''|| v===' ')
+			$(this).hide();
+	});
+	//for undo button action
+	$('#undo').click(function(){
+		// function to undo click
+		var wordId = String(btnClicks.pop());
+		$("#"+wordId).click();
+		btnClicks.pop();
+	});
+	//takes in radio input of either verb indeclinable or noun to help them get classified in those categories
+	//to suggest possible SH column values in auto completion
+	$("input[type='radio']").click(function(){
+		var radioValue = $("input[name='word_form']:checked").val();
+		if(radioValue == 'comp')
+			$('#morph').val('IIC');
+		else{
+			$('#morph').val('');
+			$.ajax({
+				type:'POST',
+				url:'ajax/get_word_form/',
+				data:{
+					'table_id': JSON.stringify(radioValue)
+				},
+				success: function( data )
+				{
+					data=data.replace(/[,)(]/g,"").split("''");
+					data[0] = data[0].slice(1,);
+					data[data.length-1] = data[data.length-1].slice(0,-1);
+					auto_ar = data;
+					autocomplete(document.getElementById("morph"), auto_ar);//implementing auto complete function
+				}
+			})
+		}
+	});
+});
+</script>
+</div>
+{% endblock %}

@@ -1,0 +1,353 @@
+/*navigation bar styling*/
+.navbar{
+	background-color:#000;
+	border: 1px solid transparent;
+	height: 60px;
+	margin-bottom: 10px;
+	color:#fff;
+	
+}
+.navbar-brand{
+	line-height: inherit;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				 0px 8px 13px rgba(0,0,0,0.1),
+				 0px 18px 23px rgba(0,0,0,0.1);
+}
+.navbar-nav>li>a{
+	line-height: inherit;
+	margin-top:7px;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #615d5d;
+} 
+.navbar-inverse .navbar-toggle{
+	margin-top: 17px;
+}
+/*input in form structure*/
+#form{
+	box-shadow: 5px 5px #888888;
+}
+
+/*styling the footer part*/
+#footer{
+	font-size: 12px;
+	margin-top:200px;
+	text-align: center;
+}
+
+/*styling the panels*/
+.panel-info{
+	width:100%;
+}
+.panel-info > .panel-heading{
+  padding:1px;
+}
+.panel-body{
+	padding:0px;
+    min-height: 300px;
+}
+#heading{
+	text-align:center;
+	padding:3.5px;
+	letter-spacing:1.5px;
+	white-space:nowrap;
+}
+
+.table-responsive{
+	min-height: 300px;
+}
+.inputfield{
+	margin:0;
+	padding:5px;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  float:left;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 23px;
+  width: 25px;
+  left: 1px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 30px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+strong{
+	float:left;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	font-size: 18px;
+  margin-left:10px;
+}
+.label{
+  color:white;
+  padding:8px;
+  font-size: 15px;
+}
+.other {background-color: #e7e7e7; color: black;}
+.styling{
+  border:none;
+  max-width:100%;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/*styling rows of tabular structures*/
+td{
+  border:none;
+  padding:0;
+  margin:0;
+}
+thead > tr > td {
+  font-weight: bold;
+}
+.words{
+  display:inline-block;
+  border:2px solid #adabab;
+  border-radius:8px;
+  box-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+       0px 8px 13px rgba(0,0,0,0.1),
+       0px 18px 23px rgba(0,0,0,0.1);
+  margin:0;
+  font-size:17px;
+  letter-spacing: 4px;
+}
+
+/*highlighting the buttons*/
+.high{
+
+  border:2px solid #f4d641;
+  border-radius:8px;
+  box-shadow: 0px 3px 10px #f4d641;
+  margin:0;
+  font-size:17px;
+  letter-spacing: 4px;
+}
+
+/*the undo button*/
+#undo{
+  margin-left:20px;
+  border-radius: 15px;
+  color:#2879d0;
+  float: right;
+}
+
+.edit {
+  display:none;
+}
+.opt {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+
+
+.opt-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 45px;
+  right: 85px;
+}
+.opt-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  /*border-bottom: 1px solid #d4d4d4;*/
+}
+.opt-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.opt-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+/*styling the autocomplete options*/
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+
+
+.autocomplete-items {
+  height:300px;
+  overflow-y:auto;
+  position: absolute;
+  /*border: 1px solid #d4d4d4;*/
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 50px;
+  right: 80px;
+
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+/*styling the example sentences part*/
+.exs{
+  float:left;
+  margin-left: 20px;
+  font-family: Arial;
+  word-spacing: 5px;
+}
+
+/*for conflict alignment of the buttons in the table*/
+.edit_div{
+  display:inline-block;
+}
+
+
+/* For POS Tagger*/
+.span-word{
+  margin: 6px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* .words:hover{
+  background-color: rgb(199, 37, 37);
+  border: 1px solid black;
+  cursor: pointer;
+}
+.words:active{
+  border: 2px solid black;
+  background-color: #B4E8FC;
+}
+.words{
+  float: left;
+}
+.words:active{
+  color: #000;
+}
+.words:hover{
+  color: #000;
+} */
+.position-data {
+  /* vertical-align: top; */
+  min-width: 800px
+}
+.add-tags{
+  display: inline-block;
+  float: right;
+  /* height: 38px;
+  width: 150px; */
+
+}
+.select-of-adding-tags{
+  height: 38px;
+  width: 150px;
+  color: #000;
+}
+.div-tags{
+  text-align: left;
+  float: left;
+  padding-left: 5px;
+  border: 1px solid black;
+  margin-right: 5px;
+  border-radius: 3px;
+  font-size: 18px;
+  height: 30px;
+  min-width: 120px;
+  max-width: 200px;
+  background-color: rgb(213, 137, 38);
+  align-items: right;
+  display: inline-block;
+  margin-top: 8px;
+}
+.div-tags:hover{
+  cursor: pointer;
+}
+
+#mymodal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  text-align: center;
+  /* height: 100vh;
+  width: 100vw; */
+}
+
+/* #modal_image{
+  height: 100%;
+  width: 100%;
+} */

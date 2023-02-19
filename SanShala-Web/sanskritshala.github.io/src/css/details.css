@@ -1,0 +1,28 @@
+
+.details{
+    background-image: linear-gradient(black,grey);
+    padding-top: 40px;
+}
+.detailcards{
+    display: inline-flex;
+    width: 410px;
+    font-size: 30px;
+    margin: 10px;
+    justify-content: center;
+    color: whitesmoke;
+}
+.detaildescription{
+    margin-top: 20px;
+    padding-left: 10px;
+    font-size: large;
+}
+.icons{
+    color: black;
+    border-radius: 50%;
+    padding: 10px;
+    transition: all 1s;
+}
+.icons:hover{
+    background-color: greenyellow;
+    cursor: pointer;
+}

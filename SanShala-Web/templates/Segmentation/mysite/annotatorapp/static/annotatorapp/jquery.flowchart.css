@@ -1,0 +1,207 @@
+/*flowchart example containers handle the orientation of all the operators*/
+.flowchart-example-container {
+  height: 2000px;
+  border: 1px solid #BBB;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+}
+
+.flowchart-example-container-1 {
+  height: 400px;
+  border: 1px solid #BBB;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+}
+
+
+.flowchart-container {
+    position: relative;
+    overflow: hidden;
+}
+/*linking the operators*/
+.flowchart-links-layer, .flowchart-operators-layer{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+
+ .flowchart-temporary-link-layer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.flowchart-operators-layer, .flowchart-temporary-link-layer {
+    pointer-events: none;
+}
+
+
+#chart_container {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: repeating-linear-gradient(
+      45deg,
+      #eee,
+      #eee 10px,
+      #e5e5e5 10px,
+      #e5e5e5 20px
+    );
+    border: 1px solid black;
+}
+
+.flowchart-temporary-link-layer {
+    display: inline;
+}
+
+
+
+.flowchart-link, .flowchart-operator {
+     cursor: pointer;
+}
+
+
+.flowchart-operator-connector {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.flowchart-operator-connector-label {
+    font-size: small;
+}
+
+/*label that stores info on what is the details of the operator chosen*/
+.flowchart-operator-inputs .flowchart-operator-connector-label {
+    margin-left: 14px;
+}
+
+.flowchart-operator-outputs .flowchart-operator-connector-label {
+    text-align: right;
+    margin-right: 5px;
+}
+
+/*connector arrows from each of the operators*/
+.flowchart-operator-connector-arrow {
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid rgb(204, 204, 204);
+    position: absolute;
+    top: 0px;
+
+}
+
+.flowchart-operator-connector-small-arrow {
+    width: 0px;
+    height: 0px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent; /*rgb(100, 100, 100);*/
+    position: absolute;
+    top: 5px;
+    pointer-events: none;
+    
+}
+
+.flowchart-operator-connector:hover .flowchart-operator-connector-arrow {
+    border-left: 10px solid rgb(153, 153, 153);
+}
+
+.flowchart-operator-inputs .flowchart-operator-connector-arrow {
+    left: -1px;
+}
+
+.flowchart-operator-outputs .flowchart-operator-connector-arrow {
+    right: -10px;
+}
+
+.flowchart-operator-inputs .flowchart-operator-connector-small-arrow {
+    left: -1px;
+}
+
+.flowchart-operator-outputs .flowchart-operator-connector-small-arrow {
+    right: -7px;
+}
+
+.unselectable {
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
+
+
+/* Default Operator */
+
+.flowchart-operator {
+    position: absolute;
+    width: 200px;
+    border: 1px solid #CCCCCC;
+    background: #FAFAFA;
+    pointer-events: initial;
+}
+
+.flowchart-operator.hover {
+    border-color: #999;
+}
+
+.flowchart-operator.selected {
+    border-color: #555;
+}
+
+
+
+.flowchart-operator .flowchart-operator-title {
+    width: 100%;
+    padding: 5px;
+    font-weight: bold;
+    box-sizing: border-box;
+    border-bottom: 1px solid #DDDDDD;
+    background: #F0F0F0;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+    /*text-overflow: ellipsis;*/
+    /*white-space: nowrap;*/
+    cursor: move;
+}
+
+.flowchart-operator .flowchart-operator-inputs-outputs {
+    display: table;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*flowchart operator as inputs to next operator*/
+.flowchart-operator .flowchart-operator-inputs{
+    display: table-cell;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    height: 50px;
+}
+
+/*flowchart operator as outputs from previous operator*/
+.flowchart-default-operator .flowchart-operator-outputs {
+    display: table-cell;
+    align-content: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 0%;
+    height: 50px;
+}

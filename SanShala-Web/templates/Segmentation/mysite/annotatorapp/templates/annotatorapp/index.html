@@ -1,0 +1,51 @@
+<!--index page to take in input as sentence and submit option-->
+<!--this page is ridirected when clicked on input tab -->
+{% extends "annotatorapp/base.html" %}
+{%block title%}Input{%endblock%}
+{%block content%}
+  <!-- <form method = "POST" action = "{% url 'annotatorapp:presentdataview' %}" id='form'> -->
+    <form method = "POST" action = "presentdata/" id='form'>
+    {% csrf_token %}
+    <div class="form-group" >
+      <label for="line">Sentence</label>
+      <input type="text" class="form-control" id="line" placeholder="Enter sentence" name="line" value='rAmasya BAryA sIwA wasya anujaH lakRmaNaH ca rAmeNa saha vanam gacCawaH'>
+    </div>
+
+    <label for="linetype">Type</label>
+    <select class="form-control"  id="linetype" name = 'linetype'>
+        <!--type options-->
+        <option>WX</option>
+        <option>SLP</option>
+        <option>Velthuis</option>
+        <option>KH</option>
+    </select>
+
+    <div class="checkbox">
+        <label><input type="checkbox" name = "checkbox" >Save Line</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div id="footer">
+    <div id="foot-container">
+      <i class="fas fa-copyright"></i> 
+</div>
+{%endblock%}
+{%block javascript%}
+<script type="text/javascript">
+
+//this function helps the sentence(among the example statements) that has been clicked upon to be automatically pasted over the input slot
+$(document).ready(function(){
+var urlParams = new URLSearchParams(window.location.search);
+var line = urlParams.toString();
+bid=line.slice(4,5);
+line=line.replace(/\+/g,' ').replace(/%27/,"'").replace(/%5C/,"").replace(/\/g,"").slice(11,);
+if(line!=''){
+$('#line').attr('value',line);
+$('#linetype').val('SLP');
+$('#exid').attr('href','/sentences/'+bid);
+}
+});
+
+</script>
+{%endblock%}

@@ -1,0 +1,108 @@
+/*styling the flowchart*/
+
+.flowchart-example-container {
+  height: 200px;
+  border: 1px solid #BBB;
+  margin-bottom: 10px;
+}
+
+.flowchart-operator-connector-arrow {
+  top: 4px;
+}
+
+.flowchart-operator-connector-small-arrow {
+  top: 9px;
+}
+
+.flowchart-example pre {
+  display: none;
+}
+/*operator creation style*/
+#create_operator {
+  margin-bottom: 10px;
+}
+
+.flowchart-example-event {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #3366FF;
+}
+
+#last_event_example_6 {
+  display: block;
+  overflow-y: auto;
+  height: 100px;
+}
+
+#flowchart_data {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  height: 140px;
+}
+
+h4 {
+  margin-top: 40px;
+}
+
+/*styling inter operator properties and links between them*/
+#operator_properties, #link_properties {
+  display: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 4px solid;
+  padding: 10px;
+}
+
+#example_9 {
+  width: 2000px;
+  height: 2000px;
+  background: white;
+}
+
+#chart_container {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: repeating-linear-gradient(
+      45deg,
+      #eee,
+      #eee 10px,
+      #e5e5e5 10px,
+      #e5e5e5 20px
+    );
+    border: 1px solid black;
+}
+
+/*operator styling while dragging them and keeping them in orientation*/
+
+.draggable_operator {
+  display: inline-block;
+  padding: 2px 5px 2px 5px;
+  border: 1px solid #ccc;
+  cursor: grab;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+.draggable_operators {
+  margin-top: 10px;
+}
+
+.draggable_operators_label {
+  margin-bottom: 5px;
+}
+
+.draggable_operators_divs {
+  margin-bottom: 20px;
+}
+
+/*styling delete button*/
+.delete_selected_button {
+  margin-bottom: 20px;
+}

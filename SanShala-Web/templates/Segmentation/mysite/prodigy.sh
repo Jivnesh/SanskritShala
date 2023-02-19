@@ -1,0 +1,3 @@
+gnome-terminal --command="bash -c 'cd /home/jivnesh/SCL_Platform/San-SOTA;source ~/anaconda3/etc/profile.d/conda.sh;conda activate LCM;bash run_evaluation.sh;conda deactivate; fuser -k 8080/tcp;cd /home/jivnesh/Desktop/agrawalanshul053.github.io/templates/prodigy-custom-model;source ~/anaconda3/etc/profile.d/conda.sh;conda activate prodigy;python -m prodigy custom-dep data relations -F dependency.py; $SHELL'"
+# sudo kill -9 $(sudo lsof -t -i:8080)
+# gnome-terminal --command="bash -c 'sleep 8; fuser -k 8080/tcp;cd /home/jivnesh/Desktop/agrawalanshul053.github.io/templates/prodigy-custom-model;source ~/anaconda3/etc/profile.d/conda.sh;conda activate prodigy;python -m prodigy custom-dep data relations -F dependency.py;chromium-browser http://172.26.173.77:8080; $SHELL'"

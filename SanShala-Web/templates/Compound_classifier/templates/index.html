@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <base href= http://cnerg.iitkgp.ac.in/tramp/> -->
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <!-- <script defer src="static/fontawesome/js/all.js"></script> -->
+    <script defer src="../static/js/all.js"></script>
+    <!-- Global CSS -->
+    <!-- <link rel="stylesheet" href="static/plugins/bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <!-- <link rel="stylesheet" href="static/plugins/elegant_font/css/style.css"> -->
+    <link rel="stylesheet" href="../static/css/elegant_font_style.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../static/css/styles.css">
+    
+    <title>compound classifier</title>
+</head>
+
+<body>
+    <!-- ******Header****** -->
+
+    <header id="header" class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a class="scrollto" href="http://cnerg.iitkgp.ac.in/sanskritshala/">
+                    <!-- <span class="logo-icon-wrapper"><img class="logo-icon" src="../../images/Krishna-logo.jpg"
+                            alt="icon"></span> -->
+                    <span class="highlight">SanskritShala</span></a>
+            </h1>
+            <!--//logo-->
+            <nav class="main-nav navbar-expand-md float-right navbar-inverse" role="navigation">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--//nav-toggle-->
+
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item"><a class="active nav-link scrollto" href="http://cnerg.iitkgp.ac.in/sanskritshala/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="http://cnerg.iitkgp.ac.in/sanskritshala/resources">Resources</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="http://cnerg.iitkgp.ac.in/sanskritshala/publications">Publications</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="http://cnerg.iitkgp.ac.in/sanskritshala/team">Team</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link scrollto" href="#team">Publications</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#pricing">Team</a></li>
+                        <li class="nav-item"><a class="nav-link scrollto" href="#contact">Contacts</a></li> -->
+                    </ul>
+                    <!--//nav-->
+                </div>
+                <!--//navabr-collapse-->
+            </nav>
+            <!--//main-nav-->
+        </div>
+        <!--//container-->
+    </header>
+    <!--//header-->
+
+
+
+    <div id="black-line">
+
+    </div>
+
+
+    <div class="page-header theme-bg-dark py-5 text-center position-relative">
+        <div class="theme-bg-shapes-right"></div>
+        <div class="theme-bg-shapes-left"></div>
+        <div class="container">
+            <h1 class="page-heading single-col-max mx-auto">Compound Word classifier</h1>
+            <div class="page-intro single-col-max mx-auto">Select the Transliteration scheme and Enter the text below to see prediction</div>
+            <br>
+            <div class="main-search-box pt-3 d-block mx-auto">
+                <form class="search-form w-100" action="predict/" method="post"></form>
+                <!-- <form class="search-form w-100" action="{{ url_for('predict')}}" method="post"> -->
+                    <label for="select-box-input-convention" id = "label-scheme">Input scheme:</label>
+                    <select name="Input-scheme" id="select-box-input-convention">
+                        <option class ="option-scheme" value="WX">WX</option>
+                        <option class ="option-scheme" value="IAST">IAST</option>
+                        <!-- <option class ="option-scheme" value="KH">KH</option> -->
+                        <option class ="option-scheme" value="SLP1">SLP1</option>
+                        <option class ="option-scheme" value="Devanagari">Devanagari</option>
+                        <option class ="option-scheme" value="Velthuis">Velthuis</option>
+                        
+                    </select>
+                    <label for="select-box-output-convention" id = "label-scheme2">Output scheme:</label>
+                    <select name="Output-scheme" id="select-box-output-convention">
+                        <option class ="option-scheme" value="WX">WX</option>
+                        <option class ="option-scheme" value="IAST">IAST</option>
+                        <!-- <option class ="option-scheme" value="KH">KH</option> -->
+                        <option class ="option-scheme" value="SLP1">SLP1</option>
+                        <option class ="option-scheme" value="Devanagari" selected>Devanagari</option>
+                        <option class ="option-scheme" value="Velthuis">Velthuis</option>
+                        
+                    </select>
+                    <br><br>
+                    <input type="text" placeholder="Enter the text..." name="search" class="form-control search-input"
+                        id='input-search'>
+                    <br>
+                    <button type="submit" id = "submit-button" class="btn-enter" value="Search">
+                        <!-- <svg
+                            class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" focusable="false"
+                            data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512" data-fa-i2svg="">
+                            <path fill="currentColor"
+                                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                            </path>
+                        </svg><i class="fas fa-search"></i> Font Awesome fontawesome.com -->
+                
+                            Enter
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-result">
+        <!-- <br>
+        <br>
+        Your text is : <span id="text">{{ prediction_text }}</span> -->
+        <br>
+        {% if 'empty' not in index.keys() %}
+        <center id="compound-heading">Compound words in your text are</center>
+        <!-- <br> -->
+        <center id = "note">(Click on the colored boxes to see graphical analysis)</center>
+        <br>
+        {% endif %}
+        {% for ind, details in index.items()%}
+        {% if ind != 'empty' and details[3]==1 %}
+        <a href="#display-prediction" class="word-anchor"><div class="words" id="worddiv-{{ind}}"
+            style="display: inline-block;border: 1px solid black;background-color: {{details[4]}};border-radius: 4px; margin : 3px;padding :1px;"
+            onclick="myFunction('img-{{ind}}');" onmouseover="myFunction1('worddiv-{{ind}}');" onmouseout="myFunction2('worddiv-{{ind}}');">
+            <span class="span-word" id="word-{{ind}}">{{details[0]}}</span>
+        </div></a>
+        {% elif (ind != 'empty') and (details[3]==0) %}
+        <div class="no-compound">
+            <span class="span-word-no-compund" id="word-{{ind}}">{{details[0]}}</span>
+        </div>
+
+        {% else %}
+        <div class="no-word">
+            <br>
+            <span class="span-word-no-compound" id="word-{{ind}}">{{details}}</span>
+        </div>
+
+        {% endif %}
+
+        {% endfor %}
+        <br><br><br>
+
+    </div>
+
+    <div id="display-prediction">
+        {% for ind, details in index.items()%}
+        {% if ind != 'empty' and details[3]==1%}
+        <center class="prob-graph" id="img-{{ind}}">
+            <div class="compound-type">Compound type is: <div class="compound-bold">{{details[1]}}</div>
+                <br>
+            </div>
+            <!-- <img src="{{url_for('static', filename= details[2])}}"> -->
+            <div class="graph">
+                <div class="graph-inside">
+                    <div class="graph-heading">Graphical analysis</div>
+                    <div class="graph-bar">
+                        <div class="flex-graph">
+                            <div class="inline-block">
+                                <div class="absolute bottom-0 w-4 sm:w-6" style="height: {{'%.2f%%' % details[6][0]}};">
+                                    <!-- <div class="heightTrns h-full bg-gradient-to-tl w-full absolute bottom-0 rounded-lg to-yellow-300 via-yellow-500 from-yellow-700"
+                                        style="border-radius: 10px;"></div> -->
+                                </div>
+                                <div style="height: {{'%.2f%%' % details[5][0]}}; background-color: #07eda0;border-radius: 15px;"></div>
+                            </div>
+                            <p class="text-graph">
+                                Avyayibhav </p>
+                            <!-- <p class="text-graph" style="font-family: Barlow, sans-serif;"> probability-1 </p> -->
+                        </div>
+                        <div class="flex-graph">
+                            <div class="inline-block">
+                                <div class="absolute bottom-0 w-4 sm:w-6" style="height: {{'%.2f%%'% details[6][1]}};">
+                                    <!-- <div class="heightTrns h-full bg-gradient-to-tl w-full absolute bottom-0 rounded-lg to-red-300 via-red-500 from-red-700"
+                                        style="border-radius: 10px;"></div> -->
+                                </div>
+                                <div style="height: {{'%.2f%%'% details[5][1]}}; background-color: rgb(84, 64, 211);border-radius: 15px;"></div>
+                            </div>
+                            <p class="text-graph">
+                                Bahuvrihi </p>
+                            <!-- <p class="text-graph" style="font-family: Barlow, sans-serif;"> probability-2 </p> -->
+                        </div>
+                        <div class="flex-graph">
+                            <div class="inline-block">
+                                <div class="absolute bottom-0 w-4 sm:w-6" style="height: {{'%.2f%%'% details[6][2]}};">
+                                    <!-- <div class="heightTrns h-full bg-gradient-to-tl w-full absolute bottom-0 rounded-lg to-yellow-300 via-yellow-500 from-yellow-700"
+                                        style="border-radius: 10px;"></div> -->
+                                </div>
+                                <div style="height: {{'%.2f%%'% details[5][2]}}; background-color: #fc0101;border-radius: 15px;"></div>
+                            </div>
+                            <p class="text-graph">
+                                Tatpurush </p>
+                            <!-- <p class="text-graph" style="font-family: Barlow, sans-serif;"> probability-3 </p> -->
+                        </div>
+                        <div class="flex-graph">
+                            <div class="inline-block">
+                                <div class="absolute bottom-0 w-4 sm:w-6" style="height: {{'%.2f%%'% details[6][3]}};">
+                                    <!-- <div class="heightTrns h-full bg-gradient-to-tl w-full absolute bottom-0 rounded-lg to-yellow-300 via-yellow-500 from-yellow-700"
+                                        style="border-radius: 10px;"></div> -->
+                                </div>
+                                <div style="height: {{'%.2f%%'% details[5][3]}}; background-color: orange;border-radius: 15px;"></div>
+                            </div>
+                            <p class="text-graph">
+                                Dvandva </p>
+                            <!-- <p class="text-graph" style="font-family: Barlow, sans-serif;"> </p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </center>
+        {% endif %}
+
+        {% endfor %}
+
+    </div>
+    <br><br>
+    <script>
+
+        function myFunction1(id) {
+            document.getElementById(id).style.borderWidth = '2px';
+            document.getElementById(id).style.padding = "0px";
+            // document.getElementById(id).style.fontWeight = 'bold';
+        }
+        function myFunction2(id){
+            document.getElementById(id).style.borderWidth = '1px';
+            document.getElementById(id).style.padding = "1px";
+            // document.getElementById(id).style.fontWeight = '600';
+        }
+        function myFunction(id_name) {
+            var tags = document.getElementsByClassName("prob-graph");
+            for (var i = 0; i < tags.length; i++) {
+                tags.item(i).style.display = "none";
+            }
+            document.getElementById(id_name).style.display = "inline-block";
+        }
+    </script>
+</body>
+
+</html>

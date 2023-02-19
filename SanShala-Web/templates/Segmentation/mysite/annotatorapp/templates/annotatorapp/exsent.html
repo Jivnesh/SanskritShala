@@ -1,0 +1,32 @@
+<!--to display user sentences upon clicking sentences option in the navigation bar-->
+{% extends "annotatorapp/base.html" %}
+{%block title%}Example Sentences{%endblock%}
+{%block content%}
+	<table>
+		<thead>
+			<tr>
+				<td>Id</td>
+				<td>Sentence</td>
+			</tr>
+		</thead>
+		<tbody>
+			{% for i,l,c,lem,m in lists %} 
+			<tr>
+				<td>{{i.xsent_id}}</td>
+				<!--these sentences are then redirected to the index page which may serve as an input for the same-->
+				<td ><a href='' id='{{i.xsent_id}}' class='exs'>{{l.line}}</a></td>
+			</tr>
+			{%endfor%}
+		</tbody>
+	</table>
+{%endblock%}
+{%block javascript%}
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.exs').click(function(){
+		var bid = JSON.parse('{{batch_id}}');
+		$(this).attr('href','/presentdata/?bid='+bid+'&linetype=SLP&line='+ $(this).text().replace(/\\/g,'') +'&linetype=SLP');
+	});
+});
+</script>
+{%endblock%}

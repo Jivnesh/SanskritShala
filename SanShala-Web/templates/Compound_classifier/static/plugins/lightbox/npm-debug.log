@@ -1,0 +1,45 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'run', 'build' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 verbose run-script [ 'prebuild', 'build', 'postbuild' ]
+5 info lifecycle ekko-lightbox@5.3.0~prebuild: ekko-lightbox@5.3.0
+6 silly lifecycle ekko-lightbox@5.3.0~prebuild: no script for prebuild, continuing
+7 info lifecycle ekko-lightbox@5.3.0~build: ekko-lightbox@5.3.0
+8 verbose lifecycle ekko-lightbox@5.3.0~build: unsafe-perm in lifecycle true
+9 verbose lifecycle ekko-lightbox@5.3.0~build: PATH: /usr/share/npm/bin/node-gyp-bin:/home/jivnesh/Desktop/agrawalanshul053.github.io/templates/Compound classifier/static/plugins/lightbox/node_modules/.bin:/home/jivnesh/bin:/home/jivnesh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+10 verbose lifecycle ekko-lightbox@5.3.0~build: CWD: /home/jivnesh/Desktop/agrawalanshul053.github.io/templates/Compound classifier/static/plugins/lightbox
+11 silly lifecycle ekko-lightbox@5.3.0~build: Args: [ '-c',
+11 silly lifecycle   'NODE_ENV=production webpack --config webpack.config.js -p' ]
+12 info lifecycle ekko-lightbox@5.3.0~build: Failed to exec build script
+13 verbose stack Error: ekko-lightbox@5.3.0 build: `NODE_ENV=production webpack --config webpack.config.js -p`
+13 verbose stack spawn ENOENT
+13 verbose stack     at ChildProcess.<anonymous> (/usr/share/npm/lib/utils/spawn.js:17:16)
+13 verbose stack     at emitTwo (events.js:87:13)
+13 verbose stack     at ChildProcess.emit (events.js:172:7)
+13 verbose stack     at maybeClose (internal/child_process.js:821:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+14 verbose pkgid ekko-lightbox@5.3.0
+15 verbose cwd /home/jivnesh/Desktop/agrawalanshul053.github.io/templates/Compound classifier/static/plugins/lightbox
+16 error Linux 4.15.0-142-generic
+17 error argv "/usr/bin/nodejs" "/usr/bin/npm" "run" "build"
+18 error node v4.2.6
+19 error npm  v3.5.2
+20 error file sh
+21 error code ELIFECYCLE
+22 error errno ENOENT
+23 error syscall spawn
+24 error ekko-lightbox@5.3.0 build: `NODE_ENV=production webpack --config webpack.config.js -p`
+24 error spawn ENOENT
+25 error Failed at the ekko-lightbox@5.3.0 build script 'NODE_ENV=production webpack --config webpack.config.js -p'.
+25 error Make sure you have the latest version of node.js and npm installed.
+25 error If you do, this is most likely a problem with the ekko-lightbox package,
+25 error not with npm itself.
+25 error Tell the author that this fails on your system:
+25 error     NODE_ENV=production webpack --config webpack.config.js -p
+25 error You can get information on how to open an issue for this project with:
+25 error     npm bugs ekko-lightbox
+25 error Or if that isn't available, you can get their info via:
+25 error     npm owner ls ekko-lightbox
+25 error There is likely additional logging output above.
+26 verbose exit [ 1, true ]

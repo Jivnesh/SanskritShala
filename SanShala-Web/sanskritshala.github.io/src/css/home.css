@@ -1,0 +1,39 @@
+.home{
+    overflow: hidden;
+}
+.title{
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(240, 248, 255, 0.356);
+    
+}
+.websitetitle{
+    font-size: 30px;
+}
+.pages{
+    align-self: center;
+}
+.span{
+    display: inline-block;
+    margin-left: 20px;
+}
+.span{
+    transition: transform 1s;
+}
+.span:hover{
+    cursor: pointer;
+    color: blue;
+    transform: scale(1.1);
+}
+.content{
+    border-top: 2px blueviolet;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+@media screen and (max-width: 800px) {
+    
+    
+}

@@ -1,0 +1,13 @@
+.team{
+    padding: 10px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+.listnames{
+    padding-left: 40px;
+    padding-top: 8px;
+}

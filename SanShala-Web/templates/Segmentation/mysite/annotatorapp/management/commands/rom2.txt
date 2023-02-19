@@ -1,0 +1,12 @@
+ai,E
+au,O
+kh,K
+gh,G
+ch,C
+jh,J
+ṭh,W
+ḍh,Q
+th,T
+dh,D
+ph,P
+bh,B

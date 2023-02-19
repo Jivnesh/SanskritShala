@@ -1,0 +1,15 @@
+.resourcestitle{
+    padding: 40px;
+    width: 100%;
+    background-color: rgb(77, 72, 72);
+
+}
+th,td{
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+}
+th,a{
+    text-decoration: none;
+    font-weight: normal;
+}

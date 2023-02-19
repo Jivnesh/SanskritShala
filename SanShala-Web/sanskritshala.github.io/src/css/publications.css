@@ -1,0 +1,13 @@
+.publicationstitle{
+    padding: 10px;
+    border-left: 4px solid blueviolet;
+    text-align: left;
+    font-size: large;
+    background-color: whitesmoke;
+    margin-top: 16px;
+    margin-bottom: 4px;
+    transition:all 1s
+}
+li{
+    padding: 10px;
+}

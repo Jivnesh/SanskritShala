@@ -1,0 +1,11 @@
+1	rAmasya	_	nomsgf	nomsgf	_	2	viseranam	_	_
+2	BAryA	_	nomsgf	nomsgf	_	4	viseranam	_	_
+3	sItA	_	nomsgf	nomsgf	_	2	viseranam	_	_
+4	tasya	_	nomsgf	nomsgf	_	5	viseranam	_	_
+5	anujaH	_	conj	conj	_	7	sambanxah	_	_
+6	lakzmaRaH	_	nomsgf	nomsgf	_	9	viseranam	_	_
+7	ca	_	ind	ind	_	11	sambanxah	_	_
+8	rAmeRa	_	nomsgf	nomsgf	_	9	viseranam	_	_
+9	saha	_	nomsgf	nomsgf	_	11	karwa	_	_
+10	vanam	_	nomsgn	nomsgn	_	11	karwa	_	_
+11	gacCataH	_	pftmdsg3	pftmdsg3	_	0	root	_	_

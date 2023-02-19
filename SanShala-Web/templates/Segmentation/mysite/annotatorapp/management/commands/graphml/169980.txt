@@ -1,0 +1,538 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key attr.name="key" attr.type="long" for="edge" id="d8" />
+  <key attr.name="chunk_no" attr.type="long" for="node" id="d1" />
+  <key attr.name="morph" attr.type="string" for="node" id="d5" />
+  <key attr.name="lemma" attr.type="string" for="node" id="d4" />
+  <key attr.name="pre_verb" attr.type="string" for="node" id="d7" />
+  <key attr.name="cng" attr.type="long" for="node" id="d0" />
+  <key attr.name="position" attr.type="long" for="node" id="d3" />
+  <key attr.name="length_word" attr.type="long" for="node" id="d6" />
+  <key attr.name="word" attr.type="string" for="node" id="d2" />
+  <graph edgedefault="directed">
+    <node id="1">
+      <data key="d2">prIyamARaH</data>
+      <data key="d6">10</data>
+      <data key="d3">0</data>
+      <data key="d0">29</data>
+      <data key="d7" />
+      <data key="d4">prIyamARa</data>
+      <data key="d5">nom. sg. m.</data>
+      <data key="d1">1</data>
+    </node>
+    <node id="2">
+      <data key="d2">prIyamARaH</data>
+      <data key="d6">10</data>
+      <data key="d3">-1</data>
+      <data key="d0">-240</data>
+      <data key="d7" />
+      <data key="d4">prI</data>
+      <data key="d5">ppr. ps.</data>
+      <data key="d1">1</data>
+    </node>
+    <node id="3">
+      <data key="d2">raTe</data>
+      <data key="d6">5</data>
+      <data key="d3">0</data>
+      <data key="d0">169</data>
+      <data key="d7" />
+      <data key="d4">raTa</data>
+      <data key="d5">loc. sg. m.</data>
+      <data key="d1">2</data>
+    </node>
+    <node id="4">
+      <data key="d2">tasmin</data>
+      <data key="d6">6</data>
+      <data key="d3">0</data>
+      <data key="d0">171</data>
+      <data key="d7" />
+      <data key="d4">tad</data>
+      <data key="d5">loc. sg. n.</data>
+      <data key="d1">3</data>
+    </node>
+    <node id="5">
+      <data key="d2">tasmin</data>
+      <data key="d6">6</data>
+      <data key="d3">0</data>
+      <data key="d0">169</data>
+      <data key="d7" />
+      <data key="d4">tad</data>
+      <data key="d5">loc. sg. m.</data>
+      <data key="d1">3</data>
+    </node>
+    <node id="6">
+      <data key="d2">aBavat</data>
+      <data key="d6">7</data>
+      <data key="d3">0</data>
+      <data key="d0">-43</data>
+      <data key="d7" />
+      <data key="d4">BU</data>
+      <data key="d5">impft. [1] ac. sg. 3</data>
+      <data key="d1">4</data>
+    </node>
+    <node id="7">
+      <data key="d2">a</data>
+      <data key="d6">1</data>
+      <data key="d3">0</data>
+      <data key="d0">3</data>
+      <data key="d7" />
+      <data key="d4">a</data>
+      <data key="d5">iic.</data>
+      <data key="d1">4</data>
+    </node>
+    <node id="8">
+      <data key="d2">Bavat</data>
+      <data key="d6">6</data>
+      <data key="d3">1</data>
+      <data key="d0">71</data>
+      <data key="d7" />
+      <data key="d4">Bavat</data>
+      <data key="d5">acc. sg. n.</data>
+      <data key="d1">4</data>
+    </node>
+    <node id="9">
+      <data key="d2">Bavat</data>
+      <data key="d6">6</data>
+      <data key="d3">1</data>
+      <data key="d0">31</data>
+      <data key="d7" />
+      <data key="d4">Bavat</data>
+      <data key="d5">nom. sg. n.</data>
+      <data key="d1">4</data>
+    </node>
+    <node id="10">
+      <data key="d2">Bavat</data>
+      <data key="d6">6</data>
+      <data key="d3">-1</data>
+      <data key="d0">-10</data>
+      <data key="d7" />
+      <data key="d4">BU</data>
+      <data key="d5">ppr. [1] ac.</data>
+      <data key="d1">4</data>
+    </node>
+    <node id="11">
+      <data key="d2">Bavat</data>
+      <data key="d6">6</data>
+      <data key="d3">1</data>
+      <data key="d0">51</data>
+      <data key="d7" />
+      <data key="d4">Bavat</data>
+      <data key="d5">voc. sg. n.</data>
+      <data key="d1">4</data>
+    </node>
+    <node id="12">
+      <data key="d2">Bavat</data>
+      <data key="d6">6</data>
+      <data key="d3">-1</data>
+      <data key="d0">-10</data>
+      <data key="d7" />
+      <data key="d4">BU</data>
+      <data key="d5">ppr. [1] ac.</data>
+      <data key="d1">4</data>
+    </node>
+    <node id="13">
+      <data key="d2">kfzRa</data>
+      <data key="d6">5</data>
+      <data key="d3">0</data>
+      <data key="d0">3</data>
+      <data key="d7" />
+      <data key="d4">kfzRa</data>
+      <data key="d5">iic.</data>
+      <data key="d1">5</data>
+    </node>
+    <node id="14">
+      <data key="d2">sAraTiH</data>
+      <data key="d6">8</data>
+      <data key="d3">5</data>
+      <data key="d0">29</data>
+      <data key="d7" />
+      <data key="d4">sAraTi</data>
+      <data key="d5">nom. sg. m.</data>
+      <data key="d1">5</data>
+    </node>
+    <node id="15">
+      <data key="d2">sAraTiH</data>
+      <data key="d6">8</data>
+      <data key="d3">5</data>
+      <data key="d0">30</data>
+      <data key="d7" />
+      <data key="d4">sAraTi</data>
+      <data key="d5">nom. sg. f.</data>
+      <data key="d1">5</data>
+    </node>
+    <node id="16">
+      <data key="d2">kfzRasAraTiH</data>
+      <data key="d6">12</data>
+      <data key="d3">0</data>
+      <data key="d0">29</data>
+      <data key="d7" />
+      <data key="d4">kfzRasAraTi</data>
+      <data key="d5">nom. sg. m.</data>
+      <data key="d1">5</data>
+    </node>
+    <node id="17">
+      <data key="d2">kfzRasAraTiH</data>
+      <data key="d6">12</data>
+      <data key="d3">0</data>
+      <data key="d0">30</data>
+      <data key="d7" />
+      <data key="d4">kfzRasAraTi</data>
+      <data key="d5">nom. sg. f.</data>
+      <data key="d1">5</data>
+    </node>
+    <edge source="1" target="16">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="1" target="17">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="1" target="3">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="1" target="4">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="1" target="5">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="1" target="6">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="1" target="7">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="1" target="8">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="1" target="9">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="1" target="11">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="2" target="1">
+      <data key="d8">-1</data>
+    </edge>
+    <edge source="3" target="16">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="3" target="1">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="3" target="4">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="3" target="5">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="3" target="6">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="3" target="7">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="3" target="8">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="3" target="9">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="3" target="17">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="3" target="11">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="4" target="16">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="4" target="1">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="4" target="3">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="4" target="17">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="4" target="5">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="4" target="6">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="4" target="7">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="4" target="8">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="4" target="9">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="4" target="11">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="5" target="16">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="5" target="1">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="5" target="3">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="5" target="4">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="5" target="17">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="5" target="6">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="5" target="7">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="5" target="8">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="5" target="9">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="5" target="11">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="6" target="16">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="6" target="1">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="6" target="3">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="6" target="4">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="6" target="5">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="6" target="7">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="6" target="8">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="6" target="9">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="6" target="17">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="6" target="11">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="7" target="16">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="7" target="1">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="7" target="3">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="7" target="4">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="7" target="5">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="7" target="6">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="7" target="17">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="7" target="8">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="7" target="9">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="7" target="11">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="8" target="16">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="8" target="1">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="8" target="3">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="8" target="4">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="8" target="5">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="8" target="6">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="8" target="7">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="8" target="9">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="8" target="17">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="8" target="11">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="9" target="16">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="9" target="1">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="9" target="3">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="9" target="4">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="9" target="5">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="9" target="6">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="9" target="7">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="9" target="8">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="9" target="17">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="9" target="11">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="10" target="8">
+      <data key="d8">-1</data>
+    </edge>
+    <edge source="10" target="9">
+      <data key="d8">-1</data>
+    </edge>
+    <edge source="11" target="16">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="11" target="1">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="11" target="3">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="11" target="4">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="11" target="5">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="11" target="6">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="11" target="7">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="11" target="8">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="11" target="9">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="11" target="17">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="12" target="11">
+      <data key="d8">-1</data>
+    </edge>
+    <edge source="13" target="14">
+      <data key="d8">3</data>
+    </edge>
+    <edge source="13" target="15">
+      <data key="d8">3</data>
+    </edge>
+    <edge source="16" target="1">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="16" target="3">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="16" target="4">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="16" target="5">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="16" target="6">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="16" target="7">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="16" target="8">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="16" target="9">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="16" target="17">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="16" target="11">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="16" target="13">
+      <data key="d8">3</data>
+    </edge>
+    <edge source="17" target="16">
+      <data key="d8">2</data>
+    </edge>
+    <edge source="17" target="1">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="17" target="3">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="17" target="4">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="17" target="5">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="17" target="6">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="17" target="7">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="17" target="8">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="17" target="9">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="17" target="11">
+      <data key="d8">1</data>
+    </edge>
+    <edge source="17" target="13">
+      <data key="d8">3</data>
+    </edge>
+  </graph>
+</graphml>
