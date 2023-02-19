@@ -1,5 +1,4 @@
-Official code for the paper ["Systematic Investigation of Strategies Tailored for Low-Resource Settings for Low-Resource Dependency Parsing"](https://arxiv.org/abs/2201.11374).
-If you use this code please cite our paper.
+# SanDP: Sanskrit Dependency Parser
 
 ## Requirements
 
@@ -28,20 +27,8 @@ bash run_STBC.sh
 
 ```
 
-## Citations
-```
-@misc{sandhan_systematic,
-  doi = {10.48550/ARXIV.2201.11374},
-  url = {https://arxiv.org/abs/2201.11374},
-  author = {Sandhan, Jivnesh and Behera, Laxmidhar and Goyal, Pawan},
-  keywords = {Computation and Language (cs.CL), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  title = {Systematic Investigation of Strategies Tailored for Low-Resource Settings for Low-Resource Dependency Parsing},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {Creative Commons Attribution 4.0 International}
-}
-
-```
+## Web-based tool
+You can interact with SanDP on our SanskritShala's web-based platform: [`Link`](https://cnerg.iitkgp.ac.in/sandp/)
 
 ## Acknowledgements
 Our ensembled system is built on the top of ["DCST Implementation"](https://github.com/rotmanguy/DCST)
