@@ -1,6 +1,6 @@
 # SanskritShala: A Neural Sanskrit NLP Toolkit
 
-Official code for the paper ["SanskritShala: A Neural Sanskrit NLP Toolkit with Web-Based Interface for Pedagogical and Annotation Purposes"](). If you use this code please cite our paper.
+Official code for the paper ["SanskritShala: A Neural Sanskrit NLP Toolkit with Web-Based Interface for Pedagogical and Annotation Purposes"](https://arxiv.org/abs/2302.09527). If you use this code please cite our paper.
 
 
 ## Web-based tool
@@ -38,7 +38,21 @@ SanEval is a toolkit for evaluating the quality of Sanskrit embeddings. We asses
 * Pretrained vectors can be downloaded from [this](https://iitk-my.sharepoint.com/:u:/g/personal/jivnesh_iitk_ac_in/EVpoZqJYLwBMiAM0NzSqiFwBiV9hfpSl7ZQ1Yq4b2aW-og?e=NjYEiY) link. Place this folder in `EvalSan/evaluations/Intrinsic/` path. This vectors are being used in evaluation script.
 * Our proposed LCM pretraining is available at [`EvalSan/LCM`](https://github.com/Jivnesh/SanskritShala/tree/master/EvalSan/LCM) folder. For more details please visit this link.
 
+## Citation
+If you use our tool, we'd appreciate if you cite our paper:
+```
+@misc{Sandhan_SanskritShala,
+  doi = {10.48550/ARXIV.2302.09527},
+  url = {https://arxiv.org/abs/2302.09527},
+  author = {Sandhan, Jivnesh and Agarwal, Anshul and Behera, Laxmidhar and Sandhan, Tushar and Goyal, Pawan},
+  keywords = {Computation and Language (cs.CL), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  title = {SanskritShala: A Neural Sanskrit NLP Toolkit with Web-Based Interface for Pedagogical and Annotation Purposes},
+  publisher = {arXiv},
+  year = {2023},
+  copyright = {Creative Commons Attribution 4.0 International}
+}
 
+```
 
 ## License
 This project is licensed under the terms of the `Apache license 2.0`.
